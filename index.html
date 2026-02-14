@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aerospace Engineering Portfolio | UAV Control & Flight Dynamics</title>
+    <meta name="description" content="Portfolio of an Aerospace Engineering student specializing in UAV control, flight dynamics, and software engineering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0a192f;
+            --text-primary: #ccd6f6;
+            --text-secondary: #8892b0;
+            --accent: #64ffda;
+            --glass-bg: rgba(17, 34, 64, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-bg: #112240;
+            --transition: all 0.3s ease-in-out;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Utilities */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .highlight {
+            color: var(--accent);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            border-radius: 4px;
+            font-family: 'Inter', sans-serif; /* Fallback */
+            font-family: inherit; /* Inherit form body */
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .btn:hover {
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        /* Navigation */
+        #navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(10, 25, 47, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: var(--transition);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px; /* Offset for fixed nav */
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-intro {
+            color: var(--accent);
+            font-family: 'Inter', monospace;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-title {
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 700;
+            line-height: 1.1;
+            color: #ccd6f6;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(30px, 6vw, 60px); 
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            max-width: 540px;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        /* Now Section */
+        #now {
+            padding: 2rem 0;
+        }
+
+        .now-card {
+            background: var(--card-bg);
+            border: 1px solid var(--glass-border);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .now-label {
+            color: var(--accent);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .now-text {
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+
+        /* About Section */
+        .section-title {
+            display: flex;
+            align-items: center;
+            font-size: clamp(26px, 5vw, 32px);
+            font-weight: 700;
+            color: #ccd6f6;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title::after {
+            content: "";
+            display: block;
+            width: 300px;
+            height: 1px;
+            background: #233554;
+            margin-left: 20px;
+        }
+        
+        .section-title .number {
+             color: var(--accent);
+             font-family: 'Inter', monospace;
+             font-size: 1.2rem;
+             margin-right: 10px;
+             font-weight: 400;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+            gap: 50px;
+        }
+
+        .about-text p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .about-img-wrapper {
+            position: relative;
+            border-radius: 4px;
+            overflow: hidden; 
+        }
+
+        .about-img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            filter: grayscale(100%) contrast(1);
+            transition: var(--transition);
+            /* Placeholder styling */
+            background-color: #233554;
+            min-height: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #8892b0;
+        }
+
+        .about-img:hover {
+            filter: none;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: var(--transition);
+            border: 1px solid transparent;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #233554; /* Fallback */
+            border-bottom: 1px solid #0a192f;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #ccd6f6;
+            margin-bottom: 0.5rem;
+        }
+        
+        .project-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+        
+        .project-folder-icon {
+            color: var(--accent);
+            font-size: 40px; /* Simulated icon size */
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+
+        .project-desc {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .project-tech-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: auto;
+            font-size: 0.8rem;
+            font-family: 'Inter', monospace;
+            color: var(--text-secondary);
+        }
+        
+        .project-tech-list li {
+            margin-right: 5px;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category h3 {
+             color: #ccd6f6;
+             font-size: 1.1rem;
+             margin-bottom: 1rem;
+             border-bottom: 1px solid #233554;
+             padding-bottom: 0.5rem;
+        }
+
+        .skill-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Contact/Footer */
+        #contact {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 100px 0;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            margin-top: 50px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-icon {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+        
+        .social-icon:hover {
+            color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplification for single file - could add hamburger later */
+            }
+            
+            .hero-title {
+                font-size: 40px;
+            }
+            .hero-subtitle {
+                font-size: 30px;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title::after {
+                width: 100%;
+                margin-left: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo">AERO.DEV</a>
+            <div class="nav-links">
+                <a href="#about"><span class="highlight">01.</span> About</a>
+                <a href="#projects"><span class="highlight">02.</span> Projects</a>
+                <a href="#skills"><span class="highlight">03.</span> Skills</a>
+                <a href="#contact"><span class="highlight">04.</span> Contact</a>
+                <a href="#" class="btn">Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="container">
+        <div class="hero-content">
+            <span class="hero-intro">Hi, my name is</span>
+            <h1 class="hero-title">Aerospace Student.</h1>
+            <h2 class="hero-subtitle">I build things that fly.</h2>
+            <p class="hero-description">
+                I'm an aerospace engineer specializing in UAV control, flight dynamics, and software engineering. 
+                Currently focused on building the future of autonomous flight through rigorous feedback control systems and predictable vehicle behavior.
+            </p>
+            <a href="#projects" class="btn" style="padding: 1.25rem 1.75rem; font-size: 1rem;">Check out my work</a>
+        </div>
+    </section>
+
+    <!-- Now Section -->
+    <section class="container">
+        <div id="now" class="now-card">
+            <div class="now-label">NOW</div>
+            <div class="now-text">Currently exploring: <strong>AI Task-Manager Agents</strong> and <strong>PX4 SITL Optimization</strong> to streamline autonomous mission planning.</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section container">
+        <h2 class="section-title"><span class="number">01.</span> About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Hello! My passion lies in the intersection of aerospace engineering and software. I enjoy tackling the complex challenges of making vehicles behave predictably in dynamic environments. My journey started with a fascination for flight mechanics and has evolved into a deep technical focus on <strong>Control Theory</strong> and <strong>Autonomy</strong>.
+                </p>
+                <p>
+                    I have hands-on experience designing flight controllers from scratch, optimizing UAV configurations for international competitions, and conducting rigorous trade-off studies. Whether it's deriving equations of motion or debugging C++ implementation of a PID loop, I thrive on the technical details that make flight possible.
+                </p>
+                <p>
+                    I've had the privilege of working on award-winning rotary-wing designs and cutting-edge hydrogen aviation concepts. My goal is to contribute to the next generation of aerospace systems where software reliability meets aerodynamic efficiency.
+                </p>
+            </div>
+            <div class="about-img-wrapper">
+                <!-- Placeholder for profile image -->
+                 <div class="about-img">
+                     [Profile Image Placeholder]
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section container">
+        <h2 class="section-title"><span class="number">02.</span> Projects</h2>
+        
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=PID+Flight+Controller" alt="Flight Controller" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Custom PID Flight Controller</h3>
+                    <div class="project-desc">
+                        <p>Developed a custom flight control stack from first principles. Implemented a cascaded PID architecture for attitude and rate control. Integrated an Extended Kalman Filter (EKF) for sensor fusion, significantly reducing IMU noise and improving state estimation accuracy during dynamic maneuvers.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>C++</li>
+                        <li>Control Systems</li>
+                        <li>Kalman Filters</li>
+                        <li>Embedded Systems</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Rotary-Wing+Payload" alt="Rotary UAV" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Rotary-Wing Payload Delivery</h3>
+                    <div class="project-desc">
+                        <p><strong>Best Manual Flight Award - AeroTHON 2023.</strong> Led the CAD design and avionics integration for a heavy-lift multirotor. Engineered a modular payload mechanism that ensured stability during release. The system demonstrated precision maneuvering capabilities under manual control in high-wind conditions.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>SolidWorks</li>
+                        <li>Avionics Integration</li>
+                        <li>Rapid Prototyping</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Tandem-Wing+Thesis" alt="Tandem Wing" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Tandem-Wing UAV Control</h3>
+                    <div class="project-desc">
+                        <p>Bachelor's Thesis. Derived the full 6-DOF non-linear equations of motion for a novel tandem-wing configuration. Developed a Pitch Attitude Hold Controller in Simulink, validating the design through rigorous loop-shaping and maximizing longitudinal stability margins.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>MATLAB</li>
+                        <li>Simulink</li>
+                        <li>Flight Dynamics</li>
+                        <li>Math Modeling</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=STOL+UAV" alt="STOL UAV" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">STOL UAV (SAE ADC 2023)</h3>
+                    <div class="project-desc">
+                        <p>Designed a Short Take-off and Landing (STOL) aircraft for the SAE Aero Design Challenge. Optimized aero-propulsive coupling to enhance lift generation at low speeds. Successfully integrated high-lift leading-edge slots, reducing takeoff distance by 15%.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>Aerodynamics</li>
+                        <li>ANSYS Fluent</li>
+                        <li>Propulsion Sizing</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Rotary+UAV+2022" alt="Rotary UAV 2022" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Rotary-Wing Optimization</h3>
+                    <div class="project-desc">
+                        <p><strong>2nd Runner Up - AeroTHON 2022.</strong> Focused on propulsion system sizing and iterative PID tuning to maximize flight time with a fixed payload. Conducted thrust stand testing to validate manufacturer data against real-world performance.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>Propulsion Testing</li>
+                        <li>PID Tuning</li>
+                        <li>Mission Analysis</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Fixed+Wing+Opt" alt="Fixed Wing 2022" class="project-img">
+                <div class="project-content">
+                    <h3 class="project-title">Fixed-Wing Optimization</h3>
+                    <div class="project-desc">
+                        <p><strong>SAEISS ADC 2022 - AIR 8.</strong> Performed extensive trade-off studies between aircraft size, structural weight, and payload fraction. Utilized XFLR5 for stability analysis to freeze the aerodynamic configuration early in the design cycle.</p>
+                    </div>
+                    <ul class="project-tech-list">
+                        <li>XFLR5</li>
+                        <li>Structural Analysis</li>
+                        <li>Systems Engineering</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section container">
+        <h2 class="section-title"><span class="number">03.</span> Technical Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Languages</h3>
+                <ul class="skill-list">
+                    <li>Python (Data Analysis, Scripts)</li>
+                    <li>C++ (Embedded, Flight Code)</li>
+                    <li>MATLAB (Modeling, Control)</li>
+                    <li>HTML/CSS/JS (Web Interface)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Tools & Frameworks</h3>
+                <ul class="skill-list">
+                    <li>Simulink & Stateflow</li>
+                    <li>PX4 Autopilot Stack</li>
+                    <li>SolidWorks / Fusion 360</li>
+                    <li>Git / GitHub</li>
+                    <li>ROS (Robot Operating System)</li>
+                </ul>
+            </div>
+            <div class="skill-category">
+                <h3>Engineering Domains</h3>
+                <ul class="skill-list">
+                    <li>Flight Control Tuning (PID, LQR)</li>
+                    <li>UAV Sizing & Performance</li>
+                    <li>Mathematical Modeling (6-DOF)</li>
+                    <li>Aerodynamics (XFLR5, CFD)</li>
+                    <li>State Estimation</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Simple Contact Section -->
+    <section id="contact" class="container">
+        <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem; color: #ccd6f6;">Get In Touch</h2>
+        <p style="text-align: center; color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
+            I'm currently looking for new opportunities in UAV control systems and software engineering. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        </p>
+        <a href="mailto:email@example.com" class="btn" style="padding: 1.25rem 2rem; font-size: 1.1rem;">Say Hello</a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://github.com" target="_blank" class="social-icon">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" class="social-icon">LinkedIn</a>
+        </div>
+        <p>Designed & Built by an Aerospace Engineer.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple scroll reveal effect
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.project-card, .skill-category, .about-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+        });
+
+        // Navbar scroll effect
+        let lastScrollTop = 0;
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > 100) {
+                navbar.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
+</body>
+</html>

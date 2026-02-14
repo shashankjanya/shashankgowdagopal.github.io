@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aerospace Engineering Portfolio | UAV Control & Flight Dynamics</title>
-    <meta name="description" content="Portfolio of an Aerospace Engineering student specializing in UAV control, flight dynamics, and software engineering.">
+    <meta name="description"
+        content="Portfolio of an Aerospace Engineering student specializing in UAV control, flight dynamics, and software engineering.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -69,8 +71,10 @@
             border: 1px solid var(--accent);
             color: var(--accent);
             border-radius: 4px;
-            font-family: 'Inter', sans-serif; /* Fallback */
-            font-family: inherit; /* Inherit form body */
+            font-family: 'Inter', sans-serif;
+            /* Fallback */
+            font-family: inherit;
+            /* Inherit form body */
             font-size: 0.9rem;
             font-weight: 500;
             cursor: pointer;
@@ -128,7 +132,8 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding-top: 80px; /* Offset for fixed nav */
+            padding-top: 80px;
+            /* Offset for fixed nav */
         }
 
         .hero-content {
@@ -152,7 +157,7 @@
         }
 
         .hero-subtitle {
-            font-size: clamp(30px, 6vw, 60px); 
+            font-size: clamp(30px, 6vw, 60px);
             font-weight: 700;
             line-height: 1.1;
             color: var(--text-secondary);
@@ -211,13 +216,13 @@
             background: #233554;
             margin-left: 20px;
         }
-        
+
         .section-title .number {
-             color: var(--accent);
-             font-family: 'Inter', monospace;
-             font-size: 1.2rem;
-             margin-right: 10px;
-             font-weight: 400;
+            color: var(--accent);
+            font-family: 'Inter', monospace;
+            font-size: 1.2rem;
+            margin-right: 10px;
+            font-weight: 400;
         }
 
         .about-content {
@@ -234,7 +239,7 @@
         .about-img-wrapper {
             position: relative;
             border-radius: 4px;
-            overflow: hidden; 
+            overflow: hidden;
         }
 
         .about-img {
@@ -286,7 +291,8 @@
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #233554; /* Fallback */
+            background-color: #233554;
+            /* Fallback */
             border-bottom: 1px solid #0a192f;
         }
 
@@ -303,17 +309,18 @@
             color: #ccd6f6;
             margin-bottom: 0.5rem;
         }
-        
+
         .project-top {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 10px;
         }
-        
+
         .project-folder-icon {
             color: var(--accent);
-            font-size: 40px; /* Simulated icon size */
+            font-size: 40px;
+            /* Simulated icon size */
             line-height: 1;
             margin-bottom: 1rem;
         }
@@ -334,7 +341,7 @@
             font-family: 'Inter', monospace;
             color: var(--text-secondary);
         }
-        
+
         .project-tech-list li {
             margin-right: 5px;
         }
@@ -345,13 +352,13 @@
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-        
+
         .skill-category h3 {
-             color: #ccd6f6;
-             font-size: 1.1rem;
-             margin-bottom: 1rem;
-             border-bottom: 1px solid #233554;
-             padding-bottom: 0.5rem;
+            color: #ccd6f6;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #233554;
+            padding-bottom: 0.5rem;
         }
 
         .skill-list li {
@@ -384,49 +391,215 @@
             font-size: 0.85rem;
             margin-top: 50px;
         }
-        
+
         .social-links {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-bottom: 20px;
         }
-        
+
         .social-icon {
             color: var(--text-secondary);
             font-size: 1.2rem;
             transition: var(--transition);
         }
-        
+
         .social-icon:hover {
             color: var(--accent);
             transform: translateY(-3px);
         }
 
+        /* Carousel Styles */
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            /* Increased height slightly for better visibility */
+            overflow: hidden;
+            background-color: #233554;
+            border-bottom: 1px solid #0a192f;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            height: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 10px 10px;
+            background: linear-gradient(to top, rgba(2, 12, 27, 0.9), transparent);
+            color: #ccd6f6;
+            font-size: 0.8rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .carousel:hover .carousel-caption {
+            opacity: 1;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(17, 34, 64, 0.6);
+            border: none;
+            color: #64ffda;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 10;
+            transition: all 0.2s ease;
+            opacity: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .carousel:hover .carousel-nav {
+            opacity: 1;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(17, 34, 64, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-nav.prev {
+            left: 10px;
+        }
+
+        .carousel-nav.next {
+            right: 10px;
+        }
+
+        .carousel-indicators {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 10;
+        }
+
+        .carousel-indicator {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(136, 146, 176, 0.5);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .carousel-indicator.active {
+            background: #64ffda;
+            transform: scale(1.2);
+        }
+
+        /* Lightbox */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 25, 47, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            border: 2px solid #64ffda;
+            border-radius: 4px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #64ffda;
+            font-size: 2rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Simplification for single file - could add hamburger later */
+                display: none;
+                /* Simplification for single file - could add hamburger later */
             }
-            
+
             .hero-title {
                 font-size: 40px;
             }
+
             .hero-subtitle {
                 font-size: 30px;
             }
-            
+
             .about-content {
                 grid-template-columns: 1fr;
             }
-            
+
             .section-title::after {
                 width: 100%;
                 margin-left: 10px;
             }
+
+            .carousel-nav {
+                opacity: 0.5;
+                /* Always visible on mobile */
+            }
+
+            .carousel-caption {
+                opacity: 1;
+                /* Always visible on mobile */
+                background: linear-gradient(to top, rgba(2, 12, 27, 0.95), transparent);
+            }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Navigation -->
@@ -450,8 +623,9 @@
             <h1 class="hero-title">Aerospace Student.</h1>
             <h2 class="hero-subtitle">I build things that fly.</h2>
             <p class="hero-description">
-                I'm an aerospace engineer specializing in UAV control, flight dynamics, and software engineering. 
-                Currently focused on building the future of autonomous flight through rigorous feedback control systems and predictable vehicle behavior.
+                I'm an aerospace engineer specializing in UAV control, flight dynamics, and software engineering.
+                Currently focused on building the future of autonomous flight through rigorous feedback control systems
+                and predictable vehicle behavior.
             </p>
             <a href="#projects" class="btn" style="padding: 1.25rem 1.75rem; font-size: 1rem;">Check out my work</a>
         </div>
@@ -461,7 +635,8 @@
     <section class="container">
         <div id="now" class="now-card">
             <div class="now-label">NOW</div>
-            <div class="now-text">Currently exploring: <strong>AI Task-Manager Agents</strong> and <strong>PX4 SITL Optimization</strong> to streamline autonomous mission planning.</div>
+            <div class="now-text">Currently exploring: <strong>AI Task-Manager Agents</strong> and <strong>PX4 SITL
+                    Optimization</strong> to streamline autonomous mission planning.</div>
         </div>
     </section>
 
@@ -471,20 +646,28 @@
         <div class="about-content">
             <div class="about-text">
                 <p>
-                    Hello! My passion lies in the intersection of aerospace engineering and software. I enjoy tackling the complex challenges of making vehicles behave predictably in dynamic environments. My journey started with a fascination for flight mechanics and has evolved into a deep technical focus on <strong>Control Theory</strong> and <strong>Autonomy</strong>.
+                    Hello! My passion lies in the intersection of aerospace engineering and software. I enjoy tackling
+                    the complex challenges of making vehicles behave predictably in dynamic environments. My journey
+                    started with a fascination for flight mechanics and has evolved into a deep technical focus on
+                    <strong>Control Theory</strong> and <strong>Autonomy</strong>.
                 </p>
                 <p>
-                    I have hands-on experience designing flight controllers from scratch, optimizing UAV configurations for international competitions, and conducting rigorous trade-off studies. Whether it's deriving equations of motion or debugging C++ implementation of a PID loop, I thrive on the technical details that make flight possible.
+                    I have hands-on experience designing flight controllers from scratch, optimizing UAV configurations
+                    for international competitions, and conducting rigorous trade-off studies. Whether it's deriving
+                    equations of motion or debugging C++ implementation of a PID loop, I thrive on the technical details
+                    that make flight possible.
                 </p>
                 <p>
-                    I've had the privilege of working on award-winning rotary-wing designs and cutting-edge hydrogen aviation concepts. My goal is to contribute to the next generation of aerospace systems where software reliability meets aerodynamic efficiency.
+                    I've had the privilege of working on award-winning rotary-wing designs and cutting-edge hydrogen
+                    aviation concepts. My goal is to contribute to the next generation of aerospace systems where
+                    software reliability meets aerodynamic efficiency.
                 </p>
             </div>
             <div class="about-img-wrapper">
                 <!-- Placeholder for profile image -->
-                 <div class="about-img">
-                     [Profile Image Placeholder]
-                 </div>
+                <div class="about-img">
+                    [Profile Image Placeholder]
+                </div>
             </div>
         </div>
     </section>
@@ -492,107 +675,264 @@
     <!-- Projects Section -->
     <section id="projects" class="section container">
         <h2 class="section-title"><span class="number">02.</span> Projects</h2>
-        
+
         <div class="projects-grid">
             <!-- Project 1 -->
             <div class="project-card">
-                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=PID+Flight+Controller" alt="Flight Controller" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Custom PID Flight Controller</h3>
-                    <div class="project-desc">
-                        <p>Developed a custom flight control stack from first principles. Implemented a cascaded PID architecture for attitude and rate control. Integrated an Extended Kalman Filter (EKF) for sensor fusion, significantly reducing IMU noise and improving state estimation accuracy during dynamic maneuvers.</p>
+                <!-- Project 1 -->
+                <div class="project-card" data-project="pid-flight-controller">
+                    <div class="carousel" id="carousel-1">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/projects/pid-flight-controller/cad.jpg" alt="PID Controller Design"
+                                    loading="lazy">
+                                <div class="carousel-caption">Design: Control Architecture</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/projects/pid-flight-controller/real.jpg" alt="PID Controller Hardware"
+                                    loading="lazy">
+                                <div class="carousel-caption">Reality: Custom PCB & Flight Stack</div>
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/projects/pid-flight-controller/team.jpg" alt="PID Controller Team"
+                                    loading="lazy">
+                                <div class="carousel-caption">Team: Integration Testing</div>
+                            </div>
+                        </div>
+                        <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
+                        <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
+                        <div class="carousel-indicators"></div>
                     </div>
-                    <ul class="project-tech-list">
-                        <li>C++</li>
-                        <li>Control Systems</li>
-                        <li>Kalman Filters</li>
-                        <li>Embedded Systems</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Rotary-Wing+Payload" alt="Rotary UAV" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Rotary-Wing Payload Delivery</h3>
-                    <div class="project-desc">
-                        <p><strong>Best Manual Flight Award - AeroTHON 2023.</strong> Led the CAD design and avionics integration for a heavy-lift multirotor. Engineered a modular payload mechanism that ensured stability during release. The system demonstrated precision maneuvering capabilities under manual control in high-wind conditions.</p>
+                    <div class="project-content">
+                        <h3 class="project-title">Custom PID Flight Controller</h3>
+                        <div class="project-desc">
+                            <p>Developed a custom flight control stack from first principles. Implemented a cascaded PID
+                                architecture for attitude and rate control. Integrated an Extended Kalman Filter (EKF)
+                                for sensor fusion, significantly reducing IMU noise and improving state estimation
+                                accuracy during dynamic maneuvers.</p>
+                        </div>
+                        <ul class="project-tech-list">
+                            <li>C++</li>
+                            <li>Control Systems</li>
+                            <li>Kalman Filters</li>
+                            <li>Embedded Systems</li>
+                        </ul>
                     </div>
-                    <ul class="project-tech-list">
-                        <li>SolidWorks</li>
-                        <li>Avionics Integration</li>
-                        <li>Rapid Prototyping</li>
-                    </ul>
                 </div>
-            </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Tandem-Wing+Thesis" alt="Tandem Wing" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Tandem-Wing UAV Control</h3>
-                    <div class="project-desc">
-                        <p>Bachelor's Thesis. Derived the full 6-DOF non-linear equations of motion for a novel tandem-wing configuration. Developed a Pitch Attitude Hold Controller in Simulink, validating the design through rigorous loop-shaping and maximizing longitudinal stability margins.</p>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <!-- Project 2 -->
+                    <div class="project-card" data-project="rotary-payload-delivery">
+                        <div class="carousel" id="carousel-2">
+                            <div class="carousel-track">
+                                <div class="carousel-slide">
+                                    <img src="assets/projects/rotary-payload-delivery/cad.jpg" alt="AeroTHON Design"
+                                        loading="lazy">
+                                    <div class="carousel-caption">Design: Mechanism CAD</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/projects/rotary-payload-delivery/real.jpg" alt="AeroTHON Hardware"
+                                        loading="lazy">
+                                    <div class="carousel-caption">Reality: Fabricated Hexacopter</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="assets/projects/rotary-payload-delivery/team.jpg" alt="AeroTHON Team"
+                                        loading="lazy">
+                                    <div class="carousel-caption">Team: AeroTHON 2023 Finals</div>
+                                </div>
+                            </div>
+                            <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
+                            <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
+                            <div class="carousel-indicators"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Rotary-Wing Payload Delivery</h3>
+                            <div class="project-desc">
+                                <p><strong>Best Manual Flight Award - AeroTHON 2023.</strong> Led the CAD design and
+                                    avionics integration for a heavy-lift multirotor. Engineered a modular payload
+                                    mechanism that ensured stability during release. The system demonstrated precision
+                                    maneuvering capabilities under manual control in high-wind conditions.</p>
+                            </div>
+                            <ul class="project-tech-list">
+                                <li>SolidWorks</li>
+                                <li>Avionics Integration</li>
+                                <li>Rapid Prototyping</li>
+                            </ul>
+                        </div>
                     </div>
-                    <ul class="project-tech-list">
-                        <li>MATLAB</li>
-                        <li>Simulink</li>
-                        <li>Flight Dynamics</li>
-                        <li>Math Modeling</li>
-                    </ul>
-                </div>
-            </div>
 
-            <!-- Project 4 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=STOL+UAV" alt="STOL UAV" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">STOL UAV (SAE ADC 2023)</h3>
-                    <div class="project-desc">
-                        <p>Designed a Short Take-off and Landing (STOL) aircraft for the SAE Aero Design Challenge. Optimized aero-propulsive coupling to enhance lift generation at low speeds. Successfully integrated high-lift leading-edge slots, reducing takeoff distance by 15%.</p>
-                    </div>
-                    <ul class="project-tech-list">
-                        <li>Aerodynamics</li>
-                        <li>ANSYS Fluent</li>
-                        <li>Propulsion Sizing</li>
-                    </ul>
-                </div>
-            </div>
+                    <!-- Project 3 -->
+                    <div class="project-card">
+                        <!-- Project 3 -->
+                        <div class="project-card" data-project="tandem-wing-uav">
+                            <div class="carousel" id="carousel-3">
+                                <div class="carousel-track">
+                                    <div class="carousel-slide">
+                                        <img src="assets/projects/tandem-wing-uav/cad.jpg" alt="Tandem Wing Simulation"
+                                            loading="lazy">
+                                        <div class="carousel-caption">Design: Simulink Model</div>
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="assets/projects/tandem-wing-uav/real.jpg" alt="Tandem Wing Hardware"
+                                            loading="lazy">
+                                        <div class="carousel-caption">Reality: Prototype Airframe</div>
+                                    </div>
+                                    <div class="carousel-slide">
+                                        <img src="assets/projects/tandem-wing-uav/team.jpg" alt="Tandem Wing Team"
+                                            loading="lazy">
+                                        <div class="carousel-caption">Team: Flight Testing</div>
+                                    </div>
+                                </div>
+                                <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
+                                <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
+                                <div class="carousel-indicators"></div>
+                            </div>
+                            <div class="project-content">
+                                <h3 class="project-title">Tandem-Wing UAV Control</h3>
+                                <div class="project-desc">
+                                    <p>Bachelor's Thesis. Derived the full 6-DOF non-linear equations of motion for a
+                                        novel tandem-wing configuration. Developed a Pitch Attitude Hold Controller in
+                                        Simulink, validating the design through rigorous loop-shaping and maximizing
+                                        longitudinal stability margins.</p>
+                                </div>
+                                <ul class="project-tech-list">
+                                    <li>MATLAB</li>
+                                    <li>Simulink</li>
+                                    <li>Flight Dynamics</li>
+                                    <li>Math Modeling</li>
+                                </ul>
+                            </div>
+                        </div>
 
-            <!-- Project 5 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Rotary+UAV+2022" alt="Rotary UAV 2022" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Rotary-Wing Optimization</h3>
-                    <div class="project-desc">
-                        <p><strong>2nd Runner Up - AeroTHON 2022.</strong> Focused on propulsion system sizing and iterative PID tuning to maximize flight time with a fixed payload. Conducted thrust stand testing to validate manufacturer data against real-world performance.</p>
-                    </div>
-                    <ul class="project-tech-list">
-                        <li>Propulsion Testing</li>
-                        <li>PID Tuning</li>
-                        <li>Mission Analysis</li>
-                    </ul>
-                </div>
-            </div>
+                        <!-- Project 4 -->
+                        <div class="project-card">
+                            <!-- Project 4 -->
+                            <div class="project-card" data-project="stol-uav">
+                                <div class="carousel" id="carousel-4">
+                                    <div class="carousel-track">
+                                        <div class="carousel-slide">
+                                            <img src="assets/projects/stol-uav/cad.jpg" alt="STOL UAV CFD"
+                                                loading="lazy">
+                                            <div class="carousel-caption">Design: ANSYS CFD Analysis</div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/projects/stol-uav/real.jpg" alt="STOL UAV Hardware"
+                                                loading="lazy">
+                                            <div class="carousel-caption">Reality: High-Lift Wing Build</div>
+                                        </div>
+                                        <div class="carousel-slide">
+                                            <img src="assets/projects/stol-uav/team.jpg" alt="STOL UAV Team"
+                                                loading="lazy">
+                                            <div class="carousel-caption">Team: SAE Aero Design 2023</div>
+                                        </div>
+                                    </div>
+                                    <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
+                                    <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
+                                    <div class="carousel-indicators"></div>
+                                </div>
+                                <div class="project-content">
+                                    <h3 class="project-title">STOL UAV (SAE ADC 2023)</h3>
+                                    <div class="project-desc">
+                                        <p>Designed a Short Take-off and Landing (STOL) aircraft for the SAE Aero Design
+                                            Challenge. Optimized aero-propulsive coupling to enhance lift generation at
+                                            low speeds. Successfully integrated high-lift leading-edge slots, reducing
+                                            takeoff distance by 15%.</p>
+                                    </div>
+                                    <ul class="project-tech-list">
+                                        <li>Aerodynamics</li>
+                                        <li>ANSYS Fluent</li>
+                                        <li>Propulsion Sizing</li>
+                                    </ul>
+                                </div>
+                            </div>
 
-            <!-- Project 6 -->
-            <div class="project-card">
-                <img src="https://via.placeholder.com/600x400/112240/64ffda?text=Fixed+Wing+Opt" alt="Fixed Wing 2022" class="project-img">
-                <div class="project-content">
-                    <h3 class="project-title">Fixed-Wing Optimization</h3>
-                    <div class="project-desc">
-                        <p><strong>SAEISS ADC 2022 - AIR 8.</strong> Performed extensive trade-off studies between aircraft size, structural weight, and payload fraction. Utilized XFLR5 for stability analysis to freeze the aerodynamic configuration early in the design cycle.</p>
-                    </div>
-                    <ul class="project-tech-list">
-                        <li>XFLR5</li>
-                        <li>Structural Analysis</li>
-                        <li>Systems Engineering</li>
-                    </ul>
-                </div>
-            </div>
+                            <!-- Project 5 -->
+                            <div class="project-card">
+                                <!-- Project 5 -->
+                                <div class="project-card" data-project="rotary-wing-optimization">
+                                    <div class="carousel" id="carousel-5">
+                                        <div class="carousel-track">
+                                            <div class="carousel-slide">
+                                                <img src="assets/projects/rotary-wing-optimization/cad.jpg"
+                                                    alt="Rotary Optimization Analysis" loading="lazy">
+                                                <div class="carousel-caption">Design: Propulsion Sizing Data</div>
+                                            </div>
+                                            <div class="carousel-slide">
+                                                <img src="assets/projects/rotary-wing-optimization/real.jpg"
+                                                    alt="Rotary Optimization Hardware" loading="lazy">
+                                                <div class="carousel-caption">Reality: Thrust Stand Setup</div>
+                                            </div>
+                                            <div class="carousel-slide">
+                                                <img src="assets/projects/rotary-wing-optimization/team.jpg"
+                                                    alt="Rotary Optimization Team" loading="lazy">
+                                                <div class="carousel-caption">Team: AeroTHON 2022 Podium</div>
+                                            </div>
+                                        </div>
+                                        <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
+                                        <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
+                                        <div class="carousel-indicators"></div>
+                                    </div>
+                                    <div class="project-content">
+                                        <h3 class="project-title">Rotary-Wing Optimization</h3>
+                                        <div class="project-desc">
+                                            <p><strong>2nd Runner Up - AeroTHON 2022.</strong> Focused on propulsion
+                                                system sizing and iterative PID tuning to maximize flight time with a
+                                                fixed payload. Conducted thrust stand testing to validate manufacturer
+                                                data against real-world performance.</p>
+                                        </div>
+                                        <ul class="project-tech-list">
+                                            <li>Propulsion Testing</li>
+                                            <li>PID Tuning</li>
+                                            <li>Mission Analysis</li>
+                                        </ul>
+                                    </div>
+                                </div>
 
-        </div>
+                                <!-- Project 6 -->
+                                <div class="project-card">
+                                    <!-- Project 6 -->
+                                    <div class="project-card" data-project="fixed-wing-optimization">
+                                        <div class="carousel" id="carousel-6">
+                                            <div class="carousel-track">
+                                                <div class="carousel-slide">
+                                                    <img src="assets/projects/fixed-wing-optimization/cad.jpg"
+                                                        alt="Fixed Wing XFLR5" loading="lazy">
+                                                    <div class="carousel-caption">Design: XFLR5 Stability Polars</div>
+                                                </div>
+                                                <div class="carousel-slide">
+                                                    <img src="assets/projects/fixed-wing-optimization/real.jpg"
+                                                        alt="Fixed Wing Hardware" loading="lazy">
+                                                    <div class="carousel-caption">Reality: Structural Testbed</div>
+                                                </div>
+                                                <div class="carousel-slide">
+                                                    <img src="assets/projects/fixed-wing-optimization/team.jpg"
+                                                        alt="Fixed Wing Team" loading="lazy">
+                                                    <div class="carousel-caption">Team: SAEISS ADC 2022</div>
+                                                </div>
+                                            </div>
+                                            <button class="carousel-nav prev"
+                                                aria-label="Previous Slide">&#10094;</button>
+                                            <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
+                                            <div class="carousel-indicators"></div>
+                                        </div>
+                                        <div class="project-content">
+                                            <h3 class="project-title">Fixed-Wing Optimization</h3>
+                                            <div class="project-desc">
+                                                <p><strong>SAEISS ADC 2022 - AIR 8.</strong> Performed extensive
+                                                    trade-off studies between aircraft size, structural weight, and
+                                                    payload fraction. Utilized XFLR5 for stability analysis to freeze
+                                                    the aerodynamic configuration early in the design cycle.</p>
+                                            </div>
+                                            <ul class="project-tech-list">
+                                                <li>XFLR5</li>
+                                                <li>Structural Analysis</li>
+                                                <li>Systems Engineering</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
     </section>
 
     <!-- Skills Section -->
@@ -633,9 +973,12 @@
 
     <!-- Simple Contact Section -->
     <section id="contact" class="container">
-        <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem; color: #ccd6f6;">Get In Touch</h2>
-        <p style="text-align: center; color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
-            I'm currently looking for new opportunities in UAV control systems and software engineering. Whether you have a question or just want to say hi, I'll try my best to get back to you!
+        <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem; color: #ccd6f6;">Get In Touch
+        </h2>
+        <p
+            style="text-align: center; color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
+            I'm currently looking for new opportunities in UAV control systems and software engineering. Whether you
+            have a question or just want to say hi, I'll try my best to get back to you!
         </p>
         <a href="mailto:email@example.com" class="btn" style="padding: 1.25rem 2rem; font-size: 1.1rem;">Say Hello</a>
     </section>
@@ -685,8 +1028,8 @@
         // Navbar scroll effect
         let lastScrollTop = 0;
         const navbar = document.getElementById('navbar');
-        
-        window.addEventListener('scroll', function() {
+
+        window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > 100) {
                 navbar.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
@@ -695,6 +1038,141 @@
             }
             lastScrollTop = scrollTop;
         });
-    </script>
-</body>
-</html>
+
+        // Carousel Class
+        class Carousel {
+            constructor(element) {
+                this.element = element;
+                this.track = element.querySelector('.carousel-track');
+                this.slides = Array.from(this.track.children);
+                this.nextButton = element.querySelector('.next');
+                this.prevButton = element.querySelector('.prev');
+                this.dotsContainer = element.querySelector('.carousel-indicators');
+
+                this.currentIndex = 0;
+                this.slideCount = this.slides.length;
+                this.autoPlayInterval = null;
+
+                // Initialize
+                this.initIndicators();
+                this.addEventListeners();
+                this.startAutoPlay();
+            }
+
+            initIndicators() {
+                this.slides.forEach((_, index) => {
+                    const dot = document.createElement('button');
+                    dot.classList.add('carousel-indicator');
+                    if (index === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => {
+                        this.goToSlide(index);
+                        this.stopAutoPlay(); // Interaction stops auto-play
+                    });
+                    this.dotsContainer.appendChild(dot);
+                });
+                this.dots = Array.from(this.dotsContainer.children);
+            }
+
+            updateIndicators() {
+                this.dots.forEach((dot, index) => {
+                    if (index === this.currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            goToSlide(index) {
+                if (index < 0) index = this.slideCount - 1;
+                if (index >= this.slideCount) index = 0;
+
+                this.currentIndex = index;
+                this.track.style.transform = `translateX(-${this.currentIndex * 100}%)`;
+                this.updateIndicators();
+            }
+
+            nextSlide() {
+                this.goToSlide(this.currentIndex + 1);
+            }
+
+            prevSlide() {
+                this.goToSlide(this.currentIndex - 1);
+            }
+
+            startAutoPlay() {
+                // Randomize start time slightly to avoid synchronized spinning
+                const delay = 3000 + Math.random() * 2000;
+                this.autoPlayInterval = setInterval(() => this.nextSlide(), delay);
+            }
+
+            stopAutoPlay() {
+                if (this.autoPlayInterval) {
+                    clearInterval(this.autoPlayInterval);
+                    this.autoPlayInterval = null;
+                }
+            }
+
+            addEventListeners() {
+                this.nextButton.addEventListener('click', () => {
+                    this.nextSlide();
+                    this.stopAutoPlay();
+                });
+
+                this.prevButton.addEventListener('click', () => {
+                    this.prevSlide();
+                    this.stopAutoPlay();
+                });
+
+                // Pause on hover
+                this.element.addEventListener('mouseenter', () => this.stopAutoPlay());
+                this.element.addEventListener('mouseleave', () => this.startAutoPlay());
+
+                // Lightbox Trigger
+                this.slides.forEach(slide => {
+                    const img = slide.querySelector('img');
+                    img.style.cursor = 'zoom-in';
+                    img.addEventListener('click', () => {
+                        openLightbox(img.src, img.alt);
+                    });
+                });
+            }
+        }
+
+        // Initialize Carousels
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousels = document.querySelectorAll('.carousel');
+            carousels.forEach(carousel => new Carousel(carousel));
+        });
+
+        // Lightbox Logic
+        const lightbox = document.createElement('div');
+        lightbox.classList.add('lightbox');
+        lightbox.innerHTML = `
+            <button class="lightbox-close">&times;</button>
+            <img src="" alt="" class="lightbox-img">
+        `;
+        document.body.appendChild(lightbox);
+
+        const lightboxImg = lightbox.querySelector('.lightbox-img');
+        const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+        function openLightbox(src, alt) {
+            lightboxImg.src = src;
+            lightboxImg.alt = alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
+
+        function closeLightbox() {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        lightboxClose.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+        });

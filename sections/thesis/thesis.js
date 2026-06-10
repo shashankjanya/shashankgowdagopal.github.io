@@ -1,97 +1,106 @@
+// Helper to build a thesis carousel HTML for a given thesis number and slide count
+function buildCarousel(thesisNum, slideCount) {
+  const slides = Array.from({ length: slideCount }, (_, i) => {
+    const picName = `thesis_${thesisNum}_${i + 1}`;
+    return `
+      <div class="carousel-slide">
+        <div class="carousel-fallback">
+          <svg viewBox="0 0 200 120" fill="none" stroke="currentColor">
+            <rect x="20" y="15" width="160" height="90" rx="4" stroke-width="1"/>
+            <line x1="20" y1="45" x2="180" y2="45" stroke-width="0.5" stroke-dasharray="4 3"/>
+            <circle cx="100" cy="72" r="18" stroke-width="1"/>
+            <line x1="88" y1="72" x2="112" y2="72" stroke-width="1"/>
+            <line x1="100" y1="60" x2="100" y2="84" stroke-width="1"/>
+          </svg>
+          <span>${picName}</span>
+        </div>
+        <img src="sections/thesis/images/${picName}.jpg"
+             alt="${picName}"
+             class="carousel-img"
+             onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+      </div>`;
+  });
+
+  return `
+    <div class="carousel thesis-carousel" id="thesis-${thesisNum}-carousel">
+      <div class="carousel-track">
+        ${slides.join('')}
+      </div>
+      <button class="carousel-nav prev">&#10094;</button>
+      <button class="carousel-nav next">&#10095;</button>
+      <div class="carousel-indicators"></div>
+    </div>`;
+}
+
 export default {
   id: 'thesis',
   title: 'Thesis Work',
+
   render(container) {
-    container.innerHTML = `
-      <div class="thesis-content">
-        <div class="thesis-text">
-          <h3 class="thesis-heading">Design, Analysis and Control of a Tandem-Wing UAV</h3>
-          <p class="thesis-abstract">
-            Focused on maximizing aerodynamic efficiency and endurance, this research investigates the flight dynamics and control design of a tandem-wing configuration. Unlike conventional aircraft, the tandem-wing design presents unique pitching moment characteristics and aerodynamic couplings that require specialized control systems.
-          </p>
-          <div class="thesis-highlights">
-            <div class="highlight-item">
-              <span class="highlight-num">01</span>
-              <div>
-                <strong>6-DOF Mathematical Modeling</strong>
-                <p>Derived a non-linear flight dynamics model of the tandem aircraft in Simulink, incorporating aerodynamic coefficient maps.</p>
-              </div>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-num">02</span>
-              <div>
-                <strong>Attitude Hold Controller</strong>
-                <p>Designed a cascaded PID attitude control loop to stabilize pitching oscillations and maintain level flight under wind gust perturbations.</p>
-              </div>
-            </div>
-            <div class="highlight-item">
-              <span class="highlight-num">03</span>
-              <div>
-                <strong>Aerodynamic Optimization</strong>
-                <p>Performed structural sizing, wing lift-drag analysis, and simulated actuator responses to verify stable control surface trim states.</p>
-              </div>
-            </div>
+    const theses = [
+      {
+        num: 1,
+        label: 'Thesis I',
+        title: 'Thesis Title Placeholder One',
+        writeup: 'Short description of the first thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
+        abstract: 'Full abstract placeholder for Thesis I. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
+        slides: 3,
+      },
+      {
+        num: 2,
+        label: 'Thesis II',
+        title: 'Thesis Title Placeholder Two',
+        writeup: 'Short description of the second thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
+        abstract: 'Full abstract placeholder for Thesis II. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
+        slides: 3,
+      },
+      {
+        num: 3,
+        label: 'Thesis III',
+        title: 'Thesis Title Placeholder Three',
+        writeup: 'Short description of the third thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
+        abstract: 'Full abstract placeholder for Thesis III. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
+        slides: 4,
+      },
+    ];
+
+    container.innerHTML = theses.map((t) => `
+      <div class="thesis-entry" id="thesis-entry-${t.num}">
+
+        <!-- Left: text write-up -->
+        <div class="thesis-entry-text">
+          <span class="thesis-label">${t.label}</span>
+          <h3 class="thesis-entry-title">${t.title}</h3>
+          <p class="thesis-entry-writeup">${t.writeup}</p>
+
+          <!-- Expandable abstract -->
+          <button class="abstract-toggle" data-target="abstract-${t.num}">
+            Read Abstract <span class="abstract-arrow">&#9660;</span>
+          </button>
+          <div class="abstract-body" id="abstract-${t.num}">
+            <p>${t.abstract}</p>
           </div>
         </div>
-        
-        <div class="thesis-visual">
-          <div class="carousel" id="thesis-carousel">
-            <div class="carousel-track">
-              <div class="carousel-slide">
-                <div class="carousel-fallback">
-                  <svg viewBox="0 0 200 120" fill="none" stroke="currentColor">
-                    <!-- Aerodynamics / Wing diagram -->
-                    <path d="M30 80 C 50 40, 150 40, 170 80 C 150 90, 50 90, 30 80 Z" stroke-width="1.5"/>
-                    <path d="M30 80 L 170 80" stroke-width="0.5" stroke-dasharray="3 3"/>
-                    <path d="M100 20 L 100 100" stroke-width="0.5" stroke-dasharray="1 1"/>
-                    <text x="105" y="30" fill="currentColor" font-size="7" font-family="'Inter', sans-serif">LIFT (L)</text>
-                    <text x="105" y="98" fill="currentColor" font-size="7" font-family="'Inter', sans-serif">WEIGHT (W)</text>
-                    <path d="M85 80 A 15 15 0 0 1 100 65" stroke-width="1" stroke="currentColor"/>
-                    <text x="75" y="72" fill="currentColor" font-size="8" font-family="monospace">α</text>
-                  </svg>
-                  <span>Simulink 6-DOF Aerodynamic Model</span>
-                </div>
-                <img src="sections/thesis/images/simulink_model.png" alt="Simulink Model" class="carousel-img" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
-              </div>
-              <div class="carousel-slide">
-                <div class="carousel-fallback">
-                  <svg viewBox="0 0 200 120" fill="none" stroke="currentColor">
-                    <!-- Tandem Wing UAV CAD -->
-                    <line x1="20" y1="60" x2="180" y2="60" stroke-width="2"/>
-                    <!-- Front wing -->
-                    <path d="M50 60 L 35 15 L 65 15 Z" fill="none" stroke-width="1.5"/>
-                    <path d="M50 60 L 35 105 L 65 105 Z" fill="none" stroke-width="1.5"/>
-                    <!-- Rear wing -->
-                    <path d="M140 60 L 120 5 L 155 5 Z" fill="none" stroke-width="1.5"/>
-                    <path d="M140 60 L 120 115 L 155 115 Z" fill="none" stroke-width="1.5"/>
-                    <!-- Fuselage circle -->
-                    <circle cx="95" cy="60" r="10" fill="none" stroke-width="1.5"/>
-                  </svg>
-                  <span>Tandem Wing CAD Layout</span>
-                </div>
-                <img src="sections/thesis/images/cad.png" alt="CAD Design" class="carousel-img" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
-              </div>
-              <div class="carousel-slide">
-                <div class="carousel-fallback">
-                  <svg viewBox="0 0 200 120" fill="none" stroke="currentColor">
-                    <!-- Chart plot -->
-                    <path d="M25 15 L 25 105 L 185 105" stroke-width="1.5"/>
-                    <path d="M25 95 Q 65 15, 105 75 T 175 45" stroke-width="2" style="stroke: var(--accent)"/>
-                    <line x1="25" y1="45" x2="185" y2="45" stroke-width="0.5" stroke-dasharray="2 2"/>
-                    <text x="120" y="38" fill="currentColor" font-size="7" font-family="'Inter', sans-serif">Target Setpoint</text>
-                    <text x="80" y="90" fill="currentColor" font-size="7" font-family="'Inter', sans-serif">Pitch Response (θ)</text>
-                  </svg>
-                  <span>Attitude Hold Step Response</span>
-                </div>
-                <img src="sections/thesis/images/simulation.png" alt="Simulation Results" class="carousel-img" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
-              </div>
-            </div>
-            <button class="carousel-nav prev">&#10094;</button>
-            <button class="carousel-nav next">&#10095;</button>
-            <div class="carousel-indicators"></div>
-          </div>
+
+        <!-- Right: image slideshow -->
+        <div class="thesis-entry-visual">
+          ${buildCarousel(t.num, t.slides)}
         </div>
+
       </div>
-    `;
-  }
+    `).join('<hr class="thesis-divider">');
+  },
+
+  init() {
+    // Wire up "Read Abstract" toggles
+    document.querySelectorAll('.abstract-toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const targetId = btn.dataset.target;
+        const body = document.getElementById(targetId);
+        const arrow = btn.querySelector('.abstract-arrow');
+        const isOpen = body.classList.toggle('open');
+        arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+      });
+    });
+  },
 };

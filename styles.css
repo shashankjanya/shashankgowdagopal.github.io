@@ -850,12 +850,22 @@ body {
     padding-left: 1rem;
 }
 
-/* Thesis carousel sizing */
+/* Carousel sizing — thesis and projects */
 .thesis-carousel {
-    height: 280px;
+    height: 180px;
     border-radius: 6px;
     border: 1px solid var(--glass-border);
 }
+
+.compact-carousel {
+    height: 160px;
+    border-radius: 6px;
+    border: 1px solid var(--glass-border);
+}
+
+/* Pack thesis + projects sections closer together */
+#thesis  { padding-bottom: 30px; }
+#projects { padding-top: 30px; }
 
 /* Horizontal divider between thesis entries */
 .thesis-divider {

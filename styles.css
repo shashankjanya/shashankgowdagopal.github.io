@@ -1,14 +1,14 @@
 /* Global Design System & Variables */
 :root {
-    --bg-color: #e2e2e2;
-    --bg-card: rgba(255, 255, 255, 0.55);
-    --bg-card-hover: rgba(255, 255, 255, 0.8);
-    --accent: #111111;
-    --accent-rgb: 17, 17, 17;
-    --text-primary: #222222;
+    --bg-color: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f5f5f5;
+    --accent: #000000;
+    --accent-rgb: 0, 0, 0;
+    --text-primary: #111111;
     --text-secondary: #555555;
-    --glass-bg: rgba(226, 226, 226, 0.85);
-    --glass-border: rgba(0, 0, 0, 0.15);
+    --glass-bg: rgba(255, 255, 255, 0.92);
+    --glass-border: rgba(0, 0, 0, 0.1);
     --transition: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
     --font-sans: 'Inter', sans-serif;
 }
@@ -26,12 +26,12 @@ html {
 body {
     font-family: var(--font-sans);
     background-color: var(--bg-color);
-    background-image: 
-        linear-gradient(rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.08) 1px, transparent 1px),
-        linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
-    background-size: 150px 150px, 150px 150px, 30px 30px, 30px 30px;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+        linear-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+    background-size: 120px 120px, 120px 120px, 24px 24px, 24px 24px;
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;

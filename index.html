@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aerospace Engineering Portfolio | UAV Control & Flight Dynamics</title>
-    <meta name="description"
-        content="Portfolio of an Aerospace Engineering student specializing in UAV control, flight dynamics, and software engineering.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -36,21 +34,6 @@
             overflow-x: hidden;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--accent);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* Utilities */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -58,7 +41,7 @@
         }
 
         .section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
         .highlight {
@@ -71,19 +54,15 @@
             border: 1px solid var(--accent);
             color: var(--accent);
             border-radius: 4px;
-            font-family: 'Inter', sans-serif;
-            /* Fallback */
-            font-family: inherit;
-            /* Inherit form body */
+            text-decoration: none;
             font-size: 0.9rem;
             font-weight: 500;
-            cursor: pointer;
             transition: var(--transition);
             background: transparent;
         }
 
         .btn:hover {
-            background: rgba(0, 0, 0, 0.05);
+            background: rgba(100, 255, 218, 0.1);
         }
 
         /* Navigation */
@@ -95,7 +74,6 @@
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            transition: var(--transition);
             border-bottom: 1px solid var(--glass-border);
         }
 
@@ -105,26 +83,16 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent);
-            letter-spacing: 1px;
-        }
-
         .nav-links {
             display: flex;
             gap: 2rem;
+            align-items: center;
         }
 
         .nav-links a {
-            font-size: 0.9rem;
-            font-weight: 500;
+            text-decoration: none;
             color: var(--text-primary);
-        }
-
-        .nav-links a:hover {
-            color: var(--accent);
+            font-size: 0.9rem;
         }
 
         /* Hero Section */
@@ -152,7 +120,7 @@
             font-size: clamp(40px, 8vw, 80px);
             font-weight: 700;
             line-height: 1.1;
-            color: var(--text-primary);
+            color: #ccd6f6;
             margin-bottom: 1rem;
         }
 
@@ -172,30 +140,20 @@
         }
 
         /* Now Section */
-        #now {
-            padding: 2rem 0;
-        }
-
         .now-card {
             background: var(--card-bg);
             border: 1px solid var(--glass-border);
-            padding: 1.5rem 2rem;
+            padding: 1.5rem;
             border-radius: 8px;
             display: flex;
             align-items: center;
             gap: 1rem;
-            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
         }
 
         .now-label {
             color: var(--accent);
-            font-weight: 600;
-            white-space: nowrap;
-        }
-
-        .now-text {
-            color: var(--text-primary);
-            font-size: 0.95rem;
+            font-weight: bold;
         }
 
         /* About Section */
@@ -204,7 +162,7 @@
             align-items: center;
             font-size: clamp(26px, 5vw, 32px);
             font-weight: 700;
-            color: var(--text-primary);
+            color: #ccd6f6;
             margin-bottom: 2.5rem;
         }
 
@@ -213,7 +171,7 @@
             display: block;
             width: 300px;
             height: 1px;
-            background: #e0e0e0;
+            background: #233554;
             margin-left: 20px;
         }
 
@@ -249,12 +207,12 @@
             filter: grayscale(100%) contrast(1);
             transition: var(--transition);
             /* Placeholder styling */
-            background-color: #e0e0e0;
+            background-color: #233554;
             min-height: 300px;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--text-secondary);
+            color: #8892b0;
         }
 
         .about-img:hover {
@@ -264,36 +222,33 @@
         /* Projects Section */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .project-card {
-            background-color: var(--card-bg);
-            border-radius: 4px;
+            background: var(--card-bg);
+            border-radius: 8px;
             overflow: hidden;
             transition: var(--transition);
-            border: 1px solid transparent;
-            position: relative;
-            height: 100%;
             display: flex;
             flex-direction: column;
+            border: 1px solid transparent;
         }
 
         .project-card:hover {
-            transform: translateY(-7px);
+            transform: translateY(-10px);
             border-color: var(--accent);
-            box-shadow: 0 20px 30px -15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
         }
 
         .project-img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            background-color: #e0e0e0;
+            background-color: #233554;
             /* Fallback */
-            border-bottom: 1px solid #d0d0d0;
+            border-bottom: 1px solid #0a192f;
         }
 
         .project-content {
@@ -306,7 +261,7 @@
         .project-title {
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--text-primary);
+            color: #ccd6f6;
             margin-bottom: 0.5rem;
         }
 
@@ -354,10 +309,10 @@
         }
 
         .skill-category h3 {
-            color: var(--text-primary);
+            color: #ccd6f6;
             font-size: 1.1rem;
             margin-bottom: 1rem;
-            border-bottom: 1px solid #e0e0e0;
+            border-bottom: 1px solid #233554;
             padding-bottom: 0.5rem;
         }
 
@@ -417,8 +372,8 @@
             height: 250px;
             /* Increased height slightly for better visibility */
             overflow: hidden;
-            background-color: #e0e0e0;
-            border-bottom: 1px solid #d0d0d0;
+            background-color: #233554;
+            border-bottom: 1px solid #0a192f;
         }
 
         .carousel-track {
@@ -446,8 +401,8 @@
             left: 0;
             width: 100%;
             padding: 20px 10px 10px;
-            background: linear-gradient(to top, rgba(255, 255, 255, 0.9), transparent);
-            color: #000000;
+            background: linear-gradient(to top, rgba(2, 12, 27, 0.9), transparent);
+            color: #ccd6f6;
             font-size: 0.8rem;
             text-align: center;
             opacity: 0;
@@ -462,9 +417,9 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid #e0e0e0;
-            color: #000000;
+            background: rgba(17, 34, 64, 0.6);
+            border: none;
+            color: #64ffda;
             font-size: 1.5rem;
             cursor: pointer;
             padding: 0.5rem;
@@ -484,7 +439,7 @@
         }
 
         .carousel-nav:hover {
-            background: rgba(255, 255, 255, 1);
+            background: rgba(17, 34, 64, 0.9);
             transform: translateY(-50%) scale(1.1);
         }
 
@@ -510,14 +465,14 @@
             width: 8px;
             height: 8px;
             border-radius: 50%;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(136, 146, 176, 0.5);
             border: none;
             cursor: pointer;
             transition: all 0.3s ease;
         }
 
         .carousel-indicator.active {
-            background: var(--accent);
+            background: #64ffda;
             transform: scale(1.2);
         }
 
@@ -528,7 +483,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(10, 25, 47, 0.95);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -546,8 +501,8 @@
         .lightbox-img {
             max-width: 90%;
             max-height: 90%;
-            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.2);
-            border: 2px solid var(--accent);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+            border: 2px solid #64ffda;
             border-radius: 4px;
         }
 
@@ -555,7 +510,7 @@
             position: absolute;
             top: 20px;
             right: 30px;
-            color: var(--text-primary);
+            color: #64ffda;
             font-size: 2rem;
             cursor: pointer;
             background: none;
@@ -594,7 +549,7 @@
             .carousel-caption {
                 opacity: 1;
                 /* Always visible on mobile */
-                background: linear-gradient(to top, rgba(255, 255, 255, 0.95), transparent);
+                background: linear-gradient(to top, rgba(2, 12, 27, 0.95), transparent);
             }
         }
     </style>
@@ -602,337 +557,136 @@
 
 <body>
 
-    <!-- Navigation -->
     <nav id="navbar">
         <div class="container nav-content">
-            <a href="#" class="logo">AERO.DEV</a>
+            <a href="#" style="color: var(--accent); font-weight: bold;">AERO.DEV</a>
             <div class="nav-links">
-                <a href="#about"><span class="highlight">01.</span> About</a>
-                <a href="#projects"><span class="highlight">02.</span> Projects</a>
-                <a href="#skills"><span class="highlight">03.</span> Skills</a>
-                <a href="#contact"><span class="highlight">04.</span> Contact</a>
-                <a href="#" class="btn">Resume</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="resume.pdf" class="btn" target="_blank">Resume</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="hero" class="container">
         <div class="hero-content">
-            <span class="hero-intro">Hi, my name is</span>
-            <h1 class="hero-title">Aerospace Student.</h1>
+            <p class="highlight">Hi, my name is</p>
+            <h1 class="hero-title">Your Name.</h1>
             <h2 class="hero-subtitle">I build things that fly.</h2>
-            <p class="hero-description">
-                I'm an aerospace engineer specializing in UAV control, flight dynamics, and software engineering.
-                Currently focused on building the future of autonomous flight through rigorous feedback control systems
-                and predictable vehicle behavior.
+            <p style="max-width: 600px; color: var(--text-secondary);">
+                Aerospace engineering student specializing in UAV control and flight dynamics.
+                Focused on bridging the gap between aerodynamic design and robust software control.
             </p>
-            <a href="#projects" class="btn" style="padding: 1.25rem 1.75rem; font-size: 1rem;">Check out my work</a>
-        </div>
-    </section>
-
-    <!-- Now Section -->
-    <section class="container">
-        <div id="now" class="now-card">
-            <div class="now-label">NOW</div>
-            <div class="now-text">Currently exploring: <strong>AI Task-Manager Agents</strong> and <strong>PX4 SITL
-                    Optimization</strong> to streamline autonomous mission planning.</div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section container">
-        <h2 class="section-title"><span class="number">01.</span> About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <p>
-                    Hello! My passion lies in the intersection of aerospace engineering and software. I enjoy tackling
-                    the complex challenges of making vehicles behave predictably in dynamic environments. My journey
-                    started with a fascination for flight mechanics and has evolved into a deep technical focus on
-                    <strong>Control Theory</strong> and <strong>Autonomy</strong>.
-                </p>
-                <p>
-                    I have hands-on experience designing flight controllers from scratch, optimizing UAV configurations
-                    for international competitions, and conducting rigorous trade-off studies. Whether it's deriving
-                    equations of motion or debugging C++ implementation of a PID loop, I thrive on the technical details
-                    that make flight possible.
-                </p>
-                <p>
-                    I've had the privilege of working on award-winning rotary-wing designs and cutting-edge hydrogen
-                    aviation concepts. My goal is to contribute to the next generation of aerospace systems where
-                    software reliability meets aerodynamic efficiency.
-                </p>
-            </div>
-            <div class="about-img-wrapper">
-                <!-- Placeholder for profile image -->
-                <div class="about-img">
-                    [Profile Image Placeholder]
-                </div>
+            <div class="now-card">
+                <div class="now-label">NOW</div>
+                <div class="now-text">Exploring AI Task-Managers & PX4 SITL Optimization.</div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section container">
-        <h2 class="section-title"><span class="number">02.</span> Projects</h2>
-
+        <h2 class="section-title"><span class="highlight">02.</span> Selected Projects</h2>
         <div class="projects-grid">
-            <!-- Project 1 -->
+
             <div class="project-card">
-                <!-- Project 1 -->
-                <div class="project-card" data-project="pid-flight-controller">
-                    <div class="carousel" id="carousel-1">
-                        <div class="carousel-track">
-                            <div class="carousel-slide">
-                                <img src="assets/projects/pid-flight-controller/cad.jpg" alt="PID Controller Design"
-                                    loading="lazy">
-                                <div class="carousel-caption">Design: Control Architecture</div>
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="assets/projects/pid-flight-controller/real.jpg" alt="PID Controller Hardware"
-                                    loading="lazy">
-                                <div class="carousel-caption">Reality: Custom PCB & Flight Stack</div>
-                            </div>
-                            <div class="carousel-slide">
-                                <img src="assets/projects/pid-flight-controller/team.jpg" alt="PID Controller Team"
-                                    loading="lazy">
-                                <div class="carousel-caption">Team: Integration Testing</div>
-                            </div>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="assets/projects/pid-controller/cad.png" alt="CAD">
+                            <div class="carousel-caption">Design: Control Architecture</div>
                         </div>
-                        <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
-                        <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
-                        <div class="carousel-indicators"></div>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Custom PID Flight Controller</h3>
-                        <div class="project-desc">
-                            <p>Developed a custom flight control stack from first principles. Implemented a cascaded PID
-                                architecture for attitude and rate control. Integrated an Extended Kalman Filter (EKF)
-                                for sensor fusion, significantly reducing IMU noise and improving state estimation
-                                accuracy during dynamic maneuvers.</p>
+                        <div class="carousel-slide">
+                            <img src="assets/projects/pid-controller/real.png" alt="Real">
+                            <div class="carousel-caption">Reality: Hardware Stack</div>
                         </div>
-                        <ul class="project-tech-list">
-                            <li>C++</li>
-                            <li>Control Systems</li>
-                            <li>Kalman Filters</li>
-                            <li>Embedded Systems</li>
-                        </ul>
+                        <div class="carousel-slide">
+                            <img src="assets/projects/pid-controller/team.png" alt="Team">
+                            <div class="carousel-caption">Team: Testing Phase</div>
+                        </div>
                     </div>
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
                 </div>
+                <div class="project-content">
+                    <h3>Custom PID Flight Controller</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">
+                        Developed a cascaded PID architecture for attitude control. Integrated a Kalman filter to handle
+                        sensor noise.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>C++</li>
+                        <li>MATLAB</li>
+                        <li>Embedded</li>
+                    </ul>
+                </div>
+            </div>
 
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <!-- Project 2 -->
-                    <div class="project-card" data-project="rotary-payload-delivery">
-                        <div class="carousel" id="carousel-2">
-                            <div class="carousel-track">
-                                <div class="carousel-slide">
-                                    <img src="assets/projects/rotary-payload-delivery/cad.jpg" alt="AeroTHON Design"
-                                        loading="lazy">
-                                    <div class="carousel-caption">Design: Mechanism CAD</div>
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="assets/projects/rotary-payload-delivery/real.jpg" alt="AeroTHON Hardware"
-                                        loading="lazy">
-                                    <div class="carousel-caption">Reality: Fabricated Hexacopter</div>
-                                </div>
-                                <div class="carousel-slide">
-                                    <img src="assets/projects/rotary-payload-delivery/team.jpg" alt="AeroTHON Team"
-                                        loading="lazy">
-                                    <div class="carousel-caption">Team: AeroTHON 2023 Finals</div>
-                                </div>
-                            </div>
-                            <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
-                            <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
-                            <div class="carousel-indicators"></div>
+            <div class="project-card">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="assets/projects/aerothon-2023/cad.png" alt="CAD">
+                            <div class="carousel-caption">Design: Payload Mechanism</div>
                         </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Rotary-Wing Payload Delivery</h3>
-                            <div class="project-desc">
-                                <p><strong>Best Manual Flight Award - AeroTHON 2023.</strong> Led the CAD design and
-                                    avionics integration for a heavy-lift multirotor. Engineered a modular payload
-                                    mechanism that ensured stability during release. The system demonstrated precision
-                                    maneuvering capabilities under manual control in high-wind conditions.</p>
-                            </div>
-                            <ul class="project-tech-list">
-                                <li>SolidWorks</li>
-                                <li>Avionics Integration</li>
-                                <li>Rapid Prototyping</li>
-                            </ul>
+                        <div class="carousel-slide">
+                            <img src="assets/projects/aerothon-2023/real.png" alt="Real">
+                            <div class="carousel-caption">Reality: Competition UAV</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/projects/aerothon-2023/team.png" alt="Team">
+                            <div class="carousel-caption">Team: Best Manual Flight Award</div>
                         </div>
                     </div>
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="project-content">
+                    <h3>AeroTHON Payload Delivery</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">
+                        Won Best Manual Flight Award. Designed a quadcopter with autonomous payload delivery
+                        capabilities.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>SolidWorks</li>
+                        <li>Avionics</li>
+                        <li>Sizing</li>
+                    </ul>
+                </div>
+            </div>
 
-                    <!-- Project 3 -->
-                    <div class="project-card">
-                        <!-- Project 3 -->
-                        <div class="project-card" data-project="tandem-wing-uav">
-                            <div class="carousel" id="carousel-3">
-                                <div class="carousel-track">
-                                    <div class="carousel-slide">
-                                        <img src="assets/projects/tandem-wing-uav/cad.jpg" alt="Tandem Wing Simulation"
-                                            loading="lazy">
-                                        <div class="carousel-caption">Design: Simulink Model</div>
-                                    </div>
-                                    <div class="carousel-slide">
-                                        <img src="assets/projects/tandem-wing-uav/real.jpg" alt="Tandem Wing Hardware"
-                                            loading="lazy">
-                                        <div class="carousel-caption">Reality: Prototype Airframe</div>
-                                    </div>
-                                    <div class="carousel-slide">
-                                        <img src="assets/projects/tandem-wing-uav/team.jpg" alt="Tandem Wing Team"
-                                            loading="lazy">
-                                        <div class="carousel-caption">Team: Flight Testing</div>
-                                    </div>
-                                </div>
-                                <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
-                                <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
-                                <div class="carousel-indicators"></div>
-                            </div>
-                            <div class="project-content">
-                                <h3 class="project-title">Tandem-Wing UAV Control</h3>
-                                <div class="project-desc">
-                                    <p>Bachelor's Thesis. Derived the full 6-DOF non-linear equations of motion for a
-                                        novel tandem-wing configuration. Developed a Pitch Attitude Hold Controller in
-                                        Simulink, validating the design through rigorous loop-shaping and maximizing
-                                        longitudinal stability margins.</p>
-                                </div>
-                                <ul class="project-tech-list">
-                                    <li>MATLAB</li>
-                                    <li>Simulink</li>
-                                    <li>Flight Dynamics</li>
-                                    <li>Math Modeling</li>
-                                </ul>
-                            </div>
+            <div class="project-card">
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <img src="assets/projects/tandem-thesis/cad.png" alt="CAD">
+                            <div class="carousel-caption">Design: Simulink 6-DOF Model</div>
                         </div>
+                        <div class="carousel-slide">
+                            <img src="assets/projects/tandem-thesis/real.png" alt="Real">
+                            <div class="carousel-caption">Reality: Tandem Prototype</div>
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/projects/tandem-thesis/team.png" alt="Team">
+                            <div class="carousel-caption">Team: Thesis Defense</div>
+                        </div>
+                    </div>
+                    <button class="carousel-nav prev">&#10094;</button>
+                    <button class="carousel-nav next">&#10095;</button>
+                </div>
+                <div class="project-content">
+                    <h3>Tandem-Wing UAV Thesis</h3>
+                    <p style="font-size: 0.9rem; color: var(--text-secondary); margin-top: 10px;">
+                        Optimized for endurance. Developed a pitch attitude hold flight controller in Simulink.
+                    </p>
+                    <ul class="project-tech-list">
+                        <li>Simulink</li>
+                        <li>Flight Dynamics</li>
+                    </ul>
+                </div>
+            </div>
 
-                        <!-- Project 4 -->
-                        <div class="project-card">
-                            <!-- Project 4 -->
-                            <div class="project-card" data-project="stol-uav">
-                                <div class="carousel" id="carousel-4">
-                                    <div class="carousel-track">
-                                        <div class="carousel-slide">
-                                            <img src="assets/projects/stol-uav/cad.jpg" alt="STOL UAV CFD"
-                                                loading="lazy">
-                                            <div class="carousel-caption">Design: ANSYS CFD Analysis</div>
-                                        </div>
-                                        <div class="carousel-slide">
-                                            <img src="assets/projects/stol-uav/real.jpg" alt="STOL UAV Hardware"
-                                                loading="lazy">
-                                            <div class="carousel-caption">Reality: High-Lift Wing Build</div>
-                                        </div>
-                                        <div class="carousel-slide">
-                                            <img src="assets/projects/stol-uav/team.jpg" alt="STOL UAV Team"
-                                                loading="lazy">
-                                            <div class="carousel-caption">Team: SAE Aero Design 2023</div>
-                                        </div>
-                                    </div>
-                                    <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
-                                    <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
-                                    <div class="carousel-indicators"></div>
-                                </div>
-                                <div class="project-content">
-                                    <h3 class="project-title">STOL UAV (SAE ADC 2023)</h3>
-                                    <div class="project-desc">
-                                        <p>Designed a Short Take-off and Landing (STOL) aircraft for the SAE Aero Design
-                                            Challenge. Optimized aero-propulsive coupling to enhance lift generation at
-                                            low speeds. Successfully integrated high-lift leading-edge slots, reducing
-                                            takeoff distance by 15%.</p>
-                                    </div>
-                                    <ul class="project-tech-list">
-                                        <li>Aerodynamics</li>
-                                        <li>ANSYS Fluent</li>
-                                        <li>Propulsion Sizing</li>
-                                    </ul>
-                                </div>
-                            </div>
-
-                            <!-- Project 5 -->
-                            <div class="project-card">
-                                <!-- Project 5 -->
-                                <div class="project-card" data-project="rotary-wing-optimization">
-                                    <div class="carousel" id="carousel-5">
-                                        <div class="carousel-track">
-                                            <div class="carousel-slide">
-                                                <img src="assets/projects/rotary-wing-optimization/cad.jpg"
-                                                    alt="Rotary Optimization Analysis" loading="lazy">
-                                                <div class="carousel-caption">Design: Propulsion Sizing Data</div>
-                                            </div>
-                                            <div class="carousel-slide">
-                                                <img src="assets/projects/rotary-wing-optimization/real.jpg"
-                                                    alt="Rotary Optimization Hardware" loading="lazy">
-                                                <div class="carousel-caption">Reality: Thrust Stand Setup</div>
-                                            </div>
-                                            <div class="carousel-slide">
-                                                <img src="assets/projects/rotary-wing-optimization/team.jpg"
-                                                    alt="Rotary Optimization Team" loading="lazy">
-                                                <div class="carousel-caption">Team: AeroTHON 2022 Podium</div>
-                                            </div>
-                                        </div>
-                                        <button class="carousel-nav prev" aria-label="Previous Slide">&#10094;</button>
-                                        <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
-                                        <div class="carousel-indicators"></div>
-                                    </div>
-                                    <div class="project-content">
-                                        <h3 class="project-title">Rotary-Wing Optimization</h3>
-                                        <div class="project-desc">
-                                            <p><strong>2nd Runner Up - AeroTHON 2022.</strong> Focused on propulsion
-                                                system sizing and iterative PID tuning to maximize flight time with a
-                                                fixed payload. Conducted thrust stand testing to validate manufacturer
-                                                data against real-world performance.</p>
-                                        </div>
-                                        <ul class="project-tech-list">
-                                            <li>Propulsion Testing</li>
-                                            <li>PID Tuning</li>
-                                            <li>Mission Analysis</li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!-- Project 6 -->
-                                <div class="project-card">
-                                    <!-- Project 6 -->
-                                    <div class="project-card" data-project="fixed-wing-optimization">
-                                        <div class="carousel" id="carousel-6">
-                                            <div class="carousel-track">
-                                                <div class="carousel-slide">
-                                                    <img src="assets/projects/fixed-wing-optimization/cad.jpg"
-                                                        alt="Fixed Wing XFLR5" loading="lazy">
-                                                    <div class="carousel-caption">Design: XFLR5 Stability Polars</div>
-                                                </div>
-                                                <div class="carousel-slide">
-                                                    <img src="assets/projects/fixed-wing-optimization/real.jpg"
-                                                        alt="Fixed Wing Hardware" loading="lazy">
-                                                    <div class="carousel-caption">Reality: Structural Testbed</div>
-                                                </div>
-                                                <div class="carousel-slide">
-                                                    <img src="assets/projects/fixed-wing-optimization/team.jpg"
-                                                        alt="Fixed Wing Team" loading="lazy">
-                                                    <div class="carousel-caption">Team: SAEISS ADC 2022</div>
-                                                </div>
-                                            </div>
-                                            <button class="carousel-nav prev"
-                                                aria-label="Previous Slide">&#10094;</button>
-                                            <button class="carousel-nav next" aria-label="Next Slide">&#10095;</button>
-                                            <div class="carousel-indicators"></div>
-                                        </div>
-                                        <div class="project-content">
-                                            <h3 class="project-title">Fixed-Wing Optimization</h3>
-                                            <div class="project-desc">
-                                                <p><strong>SAEISS ADC 2022 - AIR 8.</strong> Performed extensive
-                                                    trade-off studies between aircraft size, structural weight, and
-                                                    payload fraction. Utilized XFLR5 for stability analysis to freeze
-                                                    the aerodynamic configuration early in the design cycle.</p>
-                                            </div>
-                                            <ul class="project-tech-list">
-                                                <li>XFLR5</li>
-                                                <li>Structural Analysis</li>
-                                                <li>Systems Engineering</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
+        </div>
     </section>
 
     <!-- Skills Section -->
@@ -973,7 +727,7 @@
 
     <!-- Simple Contact Section -->
     <section id="contact" class="container">
-        <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem; color: var(--text-primary);">Get In Touch
+        <h2 class="section-title" style="justify-content: center; margin-bottom: 1rem; color: #ccd6f6;">Get In Touch
         </h2>
         <p
             style="text-align: center; color: var(--text-secondary); max-width: 500px; margin: 0 auto 3rem auto; font-size: 1.1rem;">
@@ -992,14 +746,40 @@
         <p>Designed & Built by an Aerospace Engineer.</p>
     </footer>
 
-    <!-- Scripts -->
+    <div class="lightbox" id="lightbox">
+        <img src="" id="lightbox-img">
+    </div>
+
     <script>
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        // Carousel Logic
+        document.querySelectorAll('.project-card').forEach(card => {
+            const track = card.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const nextBtn = card.querySelector('.next');
+            const prevBtn = card.querySelector('.prev');
+            let currentIdx = 0;
+
+            const updateSlide = () => {
+                track.style.transform = `translateX(-${currentIdx * 100}%)`;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                currentIdx = (currentIdx + 1) % slides.length;
+                updateSlide();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentIdx = (currentIdx - 1 + slides.length) % slides.length;
+                updateSlide();
+            });
+
+            // Lightbox trigger
+            slides.forEach(slide => {
+                slide.querySelector('img').addEventListener('click', (e) => {
+                    const lb = document.getElementById('lightbox');
+                    const lbImg = document.getElementById('lightbox-img');
+                    lbImg.src = e.target.src;
+                    lb.classList.add('active');
                 });
             });
         });
@@ -1032,7 +812,7 @@
         window.addEventListener('scroll', function () {
             let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             if (scrollTop > 100) {
-                navbar.style.boxShadow = '0 10px 30px -10px rgba(0, 0, 0, 0.1)';
+                navbar.style.boxShadow = '0 10px 30px -10px rgba(2, 12, 27, 0.7)';
             } else {
                 navbar.style.boxShadow = 'none';
             }

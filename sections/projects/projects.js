@@ -28,27 +28,38 @@ function buildCarousel(id, images) {
 // Project data — add/edit entries here
 const projects = [
   {
-    id: 'proj-pid',
-    label: 'Project 01',
-    title: 'Custom PID Flight Controller',
-    desc: 'Developed a custom attitude and rate flight controller from scratch. Cascaded PID control in C++ with Kalman-filter sensor fusion to suppress accelerometer and gyroscope noise.',
-    tags: ['C++', 'MATLAB', 'Embedded', 'Sensor Fusion'],
+    id: 'proj-sae-aero-2023',
+    label: 'SAE Aero Design Challenge 2023',
+    title: 'STOL UAV for Large-Volume Payloads',
+    desc: 'Served as Flight Mechanics Head to design a tandem-wing, twin-prop UAV with internal payload carriage and STOL capabilities. Maximized lift by integrating novel high-lift devices and aero-propulsive coupling effects.',
+    tags: ['Tandem-Wing', 'STOL', 'Aero-Propulsive Coupling'],
     images: [
-      { src: 'sections/projects/images/pid_controller_design.png', alt: 'PID Design', label: 'Control Loop Diagram' },
-      { src: 'sections/projects/images/pid_hardware.png',          alt: 'PID Hardware', label: 'Hardware Stack' },
-    ],
+      { src: 'sections/projects/pic/adcw_1.jpg', alt: 'STOL UAV CAD', label: 'UAV CAD Model' },
+      // { src: 'sections/projects//images/sae_aero_flight.png', alt: 'STOL UAV Flight', label: 'Flight Testing' }
+    ]
   },
   {
     id: 'proj-aerothon',
-    label: 'Project 02',
-    title: 'AeroTHON — Autonomous Payload Delivery',
-    desc: 'Designed and built a competition quadcopter, winning Best Manual Flight Award. Custom payload-release mechanism verified via thrust/power sizing equations.',
-    tags: ['SolidWorks', 'Avionics', 'UAV Sizing', 'SITL'],
+    label: 'SAE INDIA AeroTHON 2023',
+    title: 'Rotary-Wing UAV for Manual and Autonomous Payload Delivery',
+    desc: 'Led technical design and piloted a quadcopter for autonomous and manual payload delivery. Executed UAV sizing, CAD development, avionics integration, and controller tuning. Integrated FPV and image processing systems, resulting in the Best Manual Flight Award.',
+    tags: ['CAD', 'Avionics Integration', 'Image Processing', 'Controller Tuning', 'FPV'],
     images: [
-      { src: 'sections/projects/images/aerothon_cad.png',   alt: 'AeroTHON CAD',   label: 'Payload Mechanism CAD' },
-      { src: 'sections/projects/images/aerothon_flight.png', alt: 'AeroTHON Flight', label: 'Competition Flight' },
-    ],
+      { src: 'sections/projects/pic/aerpthon_2_1.jpg', alt: 'AeroTHON CAD', label: 'Quadcopter CAD' },
+      // { src: 'sections/projects/images/aerothon_flight.png', alt: 'AeroTHON Flight', label: 'Competition Flight' }
+    ]
   },
+  {
+    id: 'proj-saeiss-aero-2022',
+    label: 'SAEISS Aero Design Challenge 2022',
+    title: 'Fixed-Wing UAV Optimized for High Payload Fraction and Rapid Assembly',
+    desc: 'Designed an RC plane optimized for beginner pilots, incorporating trade-off studies between aircraft size and payload fraction. Led the fabrication process including laser cutting and 3D printing, securing All India Rank 8 as Team Leader and Pilot.',
+    tags: ['Fixed-Wing', 'Payload Fraction', 'Trade-off Studies', 'Laser Cutting', '3D Printing'],
+    images: [
+      { src: 'sections/projects/pic/adc_1.png', alt: 'SAEISS UAV CAD', label: 'UAV CAD Model' },
+      // { src: 'sections/projects/images/saeiss_aero_flight.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' }
+    ]
+  }
 ];
 
 export default {

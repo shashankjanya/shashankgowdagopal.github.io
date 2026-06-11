@@ -769,7 +769,7 @@ body {
 /* ── Thesis Entry Layout ────────────────────────────── */
 .thesis-entry {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     gap: 3rem;
     align-items: center;
     padding: 2.5rem 0;
@@ -852,13 +852,15 @@ body {
 
 /* Carousel sizing — thesis and projects */
 .thesis-carousel {
-    height: 180px;
+    aspect-ratio: 4 / 3;
+    height: auto;
     border-radius: 6px;
     border: 1px solid var(--glass-border);
 }
 
 .compact-carousel {
-    height: 160px;
+    aspect-ratio: 4 / 3;
+    height: auto;
     border-radius: 6px;
     border: 1px solid var(--glass-border);
 }

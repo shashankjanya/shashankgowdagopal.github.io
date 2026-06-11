@@ -45,10 +45,21 @@ const projects = [
     desc: 'Led technical design and piloted a quadcopter for autonomous and manual payload delivery. Executed UAV sizing, CAD development, avionics integration, and controller tuning. Integrated FPV and image processing systems, resulting in the Best Manual Flight Award.',
     tags: ['CAD', 'Avionics Integration', 'Image Processing', 'Controller Tuning', 'FPV'],
     images: [
-      { src: 'sections/projects/images/aerothon_cad.png', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
-      { src: 'sections/projects/images/aerothon_flight.png', alt: 'AeroTHON Flight', label: 'Competition Flight' },
+      { src: 'sections/projects/pic/aerothon_2_1.jpg', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
+      // { src: 'sections/projects/images/aerothon_flight.png', alt: 'AeroTHON Flight', label: 'Competition Flight' },
     ],
   },
+  {
+    id: 'proj-saeiss-aero-2022',
+    label: 'SAEISS Aero Design Challenge 2022',
+    title: 'Fixed-Wing UAV Optimized for High Payload Fraction and Rapid Assembly',
+    desc: 'Designed an RC plane optimized for beginner pilots, incorporating trade-off studies between aircraft size and payload fraction. Led the fabrication process including laser cutting and 3D printing, securing All India Rank 8 as Team Leader and Pilot.',
+    tags: ['Fixed-Wing', 'Payload Fraction', 'Trade-off Studies', 'Laser Cutting', '3D Printing'],
+    images: [
+      { src: 'sections/projects/pic/adc_1.png', alt: 'SAEISS UAV CAD', label: 'UAV CAD Model' },
+      // { src: 'sections/projects/images/saeiss_aero_flight.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' }
+    ]
+  }
 ];
 
 export default {

@@ -621,7 +621,7 @@ body {
     height: 100%;
     background: #ececec;
     border: 1px dashed rgba(0, 0, 0, 0.2);
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;

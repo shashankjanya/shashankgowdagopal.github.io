@@ -45,7 +45,7 @@ const projects = [
     desc: 'Led technical design and piloted a quadcopter for autonomous and manual payload delivery. Executed UAV sizing, CAD development, avionics integration, and controller tuning. Integrated FPV and image processing systems, resulting in the Best Manual Flight Award.',
     tags: ['CAD', 'Avionics Integration', 'Image Processing', 'Controller Tuning', 'FPV'],
     images: [
-      { src: 'sections/projects/pic/aerothon_2_1.jpg', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
+      { src: 'sections/projects/pic/aerpthon_2_1.jpg', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
       // { src: 'sections/projects/images/aerothon_flight.png', alt: 'AeroTHON Flight', label: 'Competition Flight' },
     ],
   },

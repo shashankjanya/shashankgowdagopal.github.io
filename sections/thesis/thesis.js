@@ -40,11 +40,11 @@ export default {
     const theses = [
       {
         num: 1,
-        label: 'Thesis I',
-        title: 'Thesis Title Placeholder One',
+        label: "Master's Thesis",
+        title: 'Implementation and Validation of a Detailed Tail Sizing Method and Application on Future Aircraft',
         writeup: 'Short description of the first thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
-        abstract: 'Full abstract placeholder for Thesis I. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
-        slides: 3,
+        abstract: "Traditional aircraft conceptual design relies heavily on empirical tail estimation methods. However, these methods are restricted to conventional configurations with strong correlations to historical datasets. For future concepts utilizing liquid hydrogen (LH2) as energy carrier, drastic shifts in geometric parameters and mass distributions render these rapid sizing methods inadequate. In light of this, my Master's thesis focused on developing and implementing a high-fidelity, stability and control (S&C) driven empennage sizing methodology into the Bauhaus Luftfahrt Aircraft Design Environment (BLADE). The core engineering tasks involved modeling the critical S&C constraints for both the longitudinal and directional planes, integrating semi-empirical aerodynamic prediction models based on DATCOM formulations, and writing comprehensive test functions to verify the Python module. The framework was successfully validated against publicly available aircraft data before being applied to novel LH2 configurations. Subsequent analytical studies focused on quantifying aircraft-level performance benefits compared to empirically sized baselines, and conducting numerical sensitivity analyses to evaluate the robustness of the implemented sizing assumptions.",
+        slides: 0,
       },
       {
         num: 2,

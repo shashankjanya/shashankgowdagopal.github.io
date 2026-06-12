@@ -30,29 +30,6 @@ export default {
             <p>Active builder and pilot of radio-controlled gliders, custom fixed-wing model aircraft, and FPV quadcopters. Testing out control loop responses in manual pilot modes.</p>
           </div>
 
-          <div class="interest-card">
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-            </div>
-            <h3>Computational Fluid Dynamics</h3>
-            <p>Exploring complex aerodynamic flows around non-standard lifting configurations, using simulation suites like OpenFOAM and XFLR5 to analyze pressure distributions.</p>
-          </div>
-
-          <div class="interest-card">
-            <div class="interest-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
-                <circle cx="12" cy="13" r="4" />
-              </svg>
-            </div>
-            <h3>Aviation Photography</h3>
-            <p>Capturing structural details of historical aircraft at air museums and tracking high-speed maneuvers at air shows, focusing on aviation design and angles.</p>
-          </div>
-
         </div>
       </div>
     `;

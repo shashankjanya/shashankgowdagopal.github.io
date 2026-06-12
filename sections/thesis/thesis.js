@@ -49,11 +49,11 @@ export default {
       },
       {
         num: 2,
-        label: 'Thesis II',
-        title: 'Thesis Title Placeholder Two',
+        label: 'Semister Thesis',
+        title: 'In-Flight System Identification and Parameter Estimation',
         writeup: 'Short description of the second thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
-        abstract: 'Full abstract placeholder for Thesis II. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
-        tags: ['Keyword A', 'Keyword B', 'Keyword C'],
+        abstract: 'Flight testing for system identification is often costly, primarily because of the time required to obtain parameter estimates of sufficient quality. In light of this, a framework for in-flight system identification and parameter estimation was developed in Matlab/Simulink in this work. The fundamental principle was to sequentially apply standard multistep inputs (such as doublets, 2-1-1, and 3-2-1-1) with increasing complexity, designing in-flight based on previously estimated parameters, to assess the short-period and Dutch-roll characteristics, including the actuator dynamics parameters. <br> <br>The implemented framework was tested on a non-linear simulation of a GTM-T2 sub-scale demonstrator aircraft, with case studies to evaluate the effect of modifying the fundamental base time-step used to design multistep signals on actuators with different bandwidths.',
+        tags: ['Simulink', 'MATLAB', 'System Identification'],
         slides: 0,
       },
       {

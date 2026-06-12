@@ -52,7 +52,7 @@ const projects = [
   {
     id: 'proj-saeiss-aero-2022',
     label: 'SAEISS Aero Design Challenge 2022',
-    title: 'Fixed-Wing UAV Optimized for High Payload Fraction and Rapid Assembly',
+    title: 'Fixed-Wing UAV Designed for High Payload Weight Fraction and Rapid Assembly',
     desc: 'Designed an RC plane optimized for beginner pilots, incorporating trade-off studies between aircraft size and payload fraction. Led the fabrication process including laser cutting and 3D printing, securing All India Rank 8 as Team Leader and Pilot.',
     tags: ['Fixed-Wing', 'Payload Fraction', 'Trade-off Studies', 'Laser Cutting', '3D Printing'],
     images: [
@@ -69,7 +69,7 @@ export default {
   render(container) {
     const VISIBLE_COUNT = 3;
     const visibleProjects = projects.slice(0, VISIBLE_COUNT);
-    const hiddenProjects  = projects.slice(VISIBLE_COUNT);
+    const hiddenProjects = projects.slice(VISIBLE_COUNT);
 
     function projectCard(p, isLast) {
       return `
@@ -102,8 +102,8 @@ export default {
       <hr class="thesis-divider thesis-divider-hidden" id="proj-hidden-divider">
       <div class="thesis-hidden-section" id="proj-hidden-section">
         ${hiddenProjects.map((p, i) =>
-          projectCard(p, i === hiddenProjects.length - 1)
-        ).join('')}
+      projectCard(p, i === hiddenProjects.length - 1)
+    ).join('')}
       </div>
       <div class="thesis-see-more-wrap">
         <button class="thesis-see-more-btn" id="proj-see-more-btn">

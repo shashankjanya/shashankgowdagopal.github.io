@@ -58,11 +58,11 @@ export default {
       },
       {
         num: 3,
-        label: 'Thesis III',
-        title: 'Thesis Title Placeholder Three',
+        label: "Bachelor's Thesis",
+        title: 'Design Analysis and Fabrication of a Tandem-Wing UAV',
         writeup: 'Short description of the third thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
-        abstract: 'Full abstract placeholder for Thesis III. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
-        tags: ['Keyword A', 'Keyword B', 'Keyword C'],
+        abstract: 'Civilian surveillance applications demand unmanned aerial vehicles capable of sustaining low operating velocities while accommodating large payload volumes and extended endurance. To successfully satisfy these stringent operational constraints, our team conceptualized, prototyped, and flight tested a tandem wing configuration. <br><br> My core technical contributions spanned the entire aircraft development lifecycle. I executed the initial conceptual sizing alongside comprehensive aerodynamic coefficient estimation. Utilizing these parameters, I developed the flight dynamics models required to design and implement a fundamental pitch attitude hold autopilot. Furthermore, I planned and directed the physical fabrication and prototyping process from end to end.',
+        tags: ['Flight dynamics modeling', 'UAV sizing', 'UAV Fabrication'],
         slides: 0,
       },
     ];
@@ -74,22 +74,16 @@ export default {
       return `
         <div class="thesis-entry" id="thesis-entry-${t.num}">
 
-          <!-- Left: text write-up -->
+          <!-- Left: text -->
           <div class="thesis-entry-text">
             <span class="thesis-label">${t.label}</span>
             <h3 class="thesis-entry-title">${t.title}</h3>
-            <p class="thesis-entry-writeup">${t.writeup}</p>
 
             <!-- Keyword tags -->
             ${t.tags && t.tags.length ? `<ul class="project-tech-list thesis-tags">${t.tags.map(tag => `<li>${tag}</li>`).join('')}</ul>` : ''}
 
-            <!-- Expandable abstract -->
-            <button class="abstract-toggle" data-target="abstract-${t.num}">
-              Read More <span class="abstract-arrow">&#9660;</span>
-            </button>
-            <div class="abstract-body" id="abstract-${t.num}">
-              <p>${t.abstract}</p>
-            </div>
+            <!-- Abstract shown directly -->
+            <p class="thesis-entry-abstract">${t.abstract}</p>
           </div>
 
           <!-- Right: image slideshow -->
@@ -122,17 +116,6 @@ export default {
   },
 
   init() {
-    // Wire up "Read More" toggles
-    document.querySelectorAll('.abstract-toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const targetId = btn.dataset.target;
-        const body = document.getElementById(targetId);
-        const arrow = btn.querySelector('.abstract-arrow');
-        const isOpen = body.classList.toggle('open');
-        arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-      });
-    });
-
     // Wire up "See more" toggle for hidden theses
     const seeMoreBtn = document.getElementById('thesis-see-more-btn');
     const hiddenSection = document.getElementById('thesis-hidden-section');

@@ -28,6 +28,17 @@ function buildCarousel(id, images) {
 // Project data — add/edit entries here
 const projects = [
   {
+    id: 'Personal Project',
+    label: '',
+    title: 'Solocopter',
+    desc: 'This project is a non linear dynamics model and simulation for a single propeller tail sitter UAV built in MATLAB and Simulink. Flight control is achieved by thrust vectoring through aerodynamic flaps placed directly in the propeller slip stream. It features a fundamental cascaded PID control architecture designed specifically for deployment on the PX4 flight stack.',
+    tags: ['MATLAB', 'Simulink', 'PID Controller'],
+    images: [
+      { src: 'sections/projects/pic/adc_1.png', alt: 'SAEISS UAV CAD', label: 'UAV CAD Model' },
+      // { src: 'sections/projects/images/saeiss_aero_flight.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' }
+    ]
+  },
+  {
     id: 'proj-sae-aero-2023',
     label: 'SAE Aero Design Challenge 2023',
     title: 'STOL UAV for Large-Volume Payloads',

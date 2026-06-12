@@ -61,8 +61,8 @@ export default {
         label: "Bachelor's Thesis",
         title: 'Design Analysis and Fabrication of a Tandem-Wing UAV',
         writeup: 'Short description of the third thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
-        abstract: 'Civilian surveillance applications demand unmanned aerial vehicles capable of sustaining low operating velocities while accommodating large payload volumes and extended endurance. To successfully satisfy these stringent operational constraints, our team conceptualized, prototyped, and flight tested a tandem wing configuration. <br><br> My core technical contributions spanned the entire aircraft development lifecycle. I executed the initial conceptual sizing alongside comprehensive aerodynamic coefficient estimation. Utilizing these parameters, I developed the flight dynamics models required to design and implement a fundamental pitch attitude hold autopilot. Furthermore, I planned and directed the physical fabrication and prototyping process from end to end.',
-        tags: ['Flight dynamics modeling', 'UAV sizing', 'UAV Fabrication'],
+        abstract: 'Civilian surveillance applications demand unmanned aerial vehicles capable of sustaining low operating velocities while accommodating large payload volumes and extended endurance. To successfully satisfy these stringent operational constraints, our team conceptualized, prototyped, and flight tested a tandem wing configuration. <br><br> My core technical contributions spanned the entire aircraft development lifecycle. I executed the initial conceptual sizing alongside aerodynamic coefficient calculations. Utilizing these parameters, I developed the flight dynamics models required to design and implement a fundamental pitch attitude hold autopilot. Furthermore, I planned and directed the physical fabrication and prototyping process from end to end.',
+        tags: ['Flight dynamics modeling', 'Simulink', 'MATLAB', 'UAV sizing', 'UAV Fabrication'],
         slides: 0,
       },
     ];

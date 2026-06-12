@@ -66,6 +66,7 @@ export default {
         slides: 0,
       },
     ];
+    // da
 
     const visibleTheses = theses.slice(0, 2);
     const hiddenTheses = theses.slice(2);

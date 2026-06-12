@@ -1,3 +1,17 @@
+// Shared helper — builds a click-to-play video panel
+function buildVideoPlayer(id, src) {
+  return `
+    <div class="project-video-wrap compact-carousel" id="${id}-video-wrap">
+      <video class="project-video" id="${id}-video" src="${src}" preload="metadata" playsinline></video>
+      <div class="project-video-overlay" id="${id}-overlay">
+        <button class="project-play-btn" id="${id}-play-btn" aria-label="Play video">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <span class="project-play-label">Play</span>
+      </div>
+    </div>`;
+}
+
 // Shared helper — builds a compact carousel for a given id and image list
 function buildCarousel(id, images) {
   const slides = images.map(({ src, alt, label }) => `
@@ -34,9 +48,7 @@ const projects = [
     title: 'Solocopter',
     desc: 'This project is a non linear dynamics model and simulation for a single propeller tail sitter UAV built in MATLAB and Simulink. Flight control is achieved by thrust vectoring through aerodynamic flaps placed directly in the propeller slip stream. It features a fundamental cascaded PID control architecture designed specifically for deployment on the PX4 flight stack.',
     tags: ['MATLAB', 'Simulink', 'PID Controller'],
-    images: [
-      { src: 'sections/projects/pic/adc_1.png', alt: 'SAEISS UAV CAD', label: 'UAV CAD Model' },
-    ]
+    video: 'sections/projects/pic/test.mp4'
   },
   {
     id: 'proj-sae-aero-2023',
@@ -45,7 +57,7 @@ const projects = [
     desc: 'Served as Flight Mechanics Head to design a tandem-wing, twin-prop UAV with internal payload carriage and STOL capabilities. Maximized lift by integrating novel high-lift devices and aero-propulsive coupling effects.',
     tags: ['Tandem-Wing', 'STOL', 'Aero-Propulsive Coupling'],
     images: [
-      { src: 'sections/projects/pic/test.mp4', alt: 'STOL UAV CAD', label: 'UAV CAD Model' },
+      { src: 'sections/projects/pic/adcw_1.jpg', alt: 'STOL UAV CAD', label: 'UAV CAD Model' },
       // { src: 'sections/projects//images/sae_aero_flight.png', alt: 'STOL UAV Flight', label: 'Flight Testing' }
     ]
   },
@@ -89,9 +101,8 @@ export default {
           <!-- Left: text write-up -->
           <div class="thesis-entry-text">
             <span class="thesis-label">${p.label}</span>
-            <h3 class="thesis-entry-title">${p.title}</h3>
-            <p class="thesis-entry-writeup">
-              ${p.desc}
+            <h3 class="thesis-entry-title">
+              ${p.title}
               ${p.githubLink ? `
               <a href="${p.githubLink.href}" target="_blank" rel="noopener noreferrer" class="project-github-link">
                 <svg class="project-github-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
@@ -99,15 +110,16 @@ export default {
                 </svg>
                 ${p.githubLink.label}
               </a>` : ''}
-            </p>
+            </h3>
+            <p class="thesis-entry-writeup">${p.desc}</p>
             <ul class="project-tech-list">
               ${p.tags.map(t => `<li>${t}</li>`).join('')}
             </ul>
           </div>
 
-          <!-- Right: image slideshow -->
+          <!-- Right: video or image slideshow -->
           <div class="thesis-entry-visual">
-            ${buildCarousel(p.id, p.images)}
+            ${p.video ? buildVideoPlayer(p.id, p.video) : buildCarousel(p.id, p.images)}
           </div>
 
         </div>
@@ -136,6 +148,26 @@ export default {
   },
 
   init() {
+    // Wire up click-to-play for any project video panels
+    projects.forEach(p => {
+      if (!p.video) return;
+      const overlay = document.getElementById(`${p.id}-overlay`);
+      const video   = document.getElementById(`${p.id}-video`);
+      if (!overlay || !video) return;
+      overlay.addEventListener('click', () => {
+        overlay.style.opacity = '0';
+        overlay.style.pointerEvents = 'none';
+        video.controls = true;
+        video.play();
+      });
+      // If user pauses, bring the overlay back
+      video.addEventListener('pause', () => {
+        overlay.style.opacity = '1';
+        overlay.style.pointerEvents = '';
+        video.controls = false;
+      });
+    });
+
     // Wire up "See more" toggle for hidden projects
     const seeMoreBtn = document.getElementById('proj-see-more-btn');
     const hiddenSection = document.getElementById('proj-hidden-section');

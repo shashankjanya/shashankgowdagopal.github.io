@@ -30,9 +30,9 @@ const projects = [
   {
     id: 'Personal Project',
     label: 'Personal Project (2026)',
+    githubLink: { href: 'https://github.com/shashankjanya/solocopter', label: 'solocopter' },
     title: 'Solocopter',
     desc: 'This project is a non linear dynamics model and simulation for a single propeller tail sitter UAV built in MATLAB and Simulink. Flight control is achieved by thrust vectoring through aerodynamic flaps placed directly in the propeller slip stream. It features a fundamental cascaded PID control architecture designed specifically for deployment on the PX4 flight stack.',
-    githubLink: { href: 'https://github.com/shashankjanya/solocopter', label: 'solocopter' },
     tags: ['MATLAB', 'Simulink', 'PID Controller'],
     images: [
       { src: 'sections/projects/pic/adc_1.png', alt: 'SAEISS UAV CAD', label: 'UAV CAD Model' },
@@ -45,7 +45,7 @@ const projects = [
     desc: 'Served as Flight Mechanics Head to design a tandem-wing, twin-prop UAV with internal payload carriage and STOL capabilities. Maximized lift by integrating novel high-lift devices and aero-propulsive coupling effects.',
     tags: ['Tandem-Wing', 'STOL', 'Aero-Propulsive Coupling'],
     images: [
-      { src: 'sections/projects/pic/adcw_1.jpg', alt: 'STOL UAV CAD', label: 'UAV CAD Model' },
+      { src: 'sections/projects/pic/test.mp4', alt: 'STOL UAV CAD', label: 'UAV CAD Model' },
       // { src: 'sections/projects//images/sae_aero_flight.png', alt: 'STOL UAV Flight', label: 'Flight Testing' }
     ]
   },

@@ -477,6 +477,11 @@ body {
     border-radius: 4px;
 }
 
+/* Thesis keyword tags — same pills, small bottom gap before Read More */
+.thesis-tags {
+    margin-bottom: 1rem;
+}
+
 /* Interests Section */
 .interests-grid {
     display: grid;
@@ -874,6 +879,51 @@ body {
     border: none;
     border-top: 1px solid var(--glass-border);
     margin: 0;
+}
+
+/* ── "See more" collapsible for thesis & projects ─────── */
+.thesis-hidden-section {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.55s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.thesis-hidden-section.open {
+    max-height: 4000px; /* large enough for any content */
+}
+
+.thesis-see-more-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 0 0.5rem;
+}
+
+.thesis-see-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    background: none;
+    border: 1px solid var(--glass-border);
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    font-family: var(--font-sans);
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.02em;
+}
+
+.thesis-see-more-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.see-more-arrow {
+    font-size: 0.65rem;
+    display: inline-block;
+    transition: transform 0.3s ease;
 }
 
 /* ── Responsive Overrides ───────────────────────────── */

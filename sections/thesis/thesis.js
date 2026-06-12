@@ -44,6 +44,7 @@ export default {
         title: 'Implementation and Validation of a Detailed Tail Sizing Method and Application on Future Aircraft',
         writeup: 'Short description of the first thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
         abstract: "Traditional aircraft conceptual design relies heavily on empirical tail estimation methods. However, these methods are restricted to conventional configurations with strong correlations to historical datasets. For future concepts utilizing liquid hydrogen (LH2) as energy carrier, drastic shifts in geometric parameters and mass distributions render these rapid sizing methods inadequate. In light of this, my Master's thesis focused on developing and implementing a high-fidelity, stability and control (S&C) driven empennage sizing methodology into the Bauhaus Luftfahrt Aircraft Design Environment (BLADE). The core engineering tasks involved modeling the critical S&C constraints for both the longitudinal and directional planes, integrating semi-empirical aerodynamic prediction models based on DATCOM formulations, and writing comprehensive test functions to verify the Python module. The framework was successfully validated against publicly available aircraft data before being applied to novel LH2 configurations. Subsequent analytical studies focused on quantifying aircraft-level performance benefits compared to empirically sized baselines, and conducting numerical sensitivity analyses to evaluate the robustness of the implemented sizing assumptions.",
+        tags: ['Aircraft Stability & Control', 'Empennage Sizing', 'LH2 Aircraft', 'DATCOM', 'Python', 'GitLab'],
         slides: 0,
       },
       {
@@ -52,7 +53,8 @@ export default {
         title: 'Thesis Title Placeholder Two',
         writeup: 'Short description of the second thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
         abstract: 'Full abstract placeholder for Thesis II. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
-        slides: 3,
+        tags: ['Keyword A', 'Keyword B', 'Keyword C'],
+        slides: 0,
       },
       {
         num: 3,
@@ -60,39 +62,67 @@ export default {
         title: 'Thesis Title Placeholder Three',
         writeup: 'Short description of the third thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
         abstract: 'Full abstract placeholder for Thesis III. Replace this with the complete abstract text. It should summarise the research problem, approach, experiments, results, and conclusions in sufficient detail for an academic reader.',
-        slides: 4,
+        tags: ['Keyword A', 'Keyword B', 'Keyword C'],
+        slides: 0,
       },
     ];
 
-    container.innerHTML = theses.map((t) => `
-      <div class="thesis-entry" id="thesis-entry-${t.num}">
+    const visibleTheses = theses.slice(0, 2);
+    const hiddenTheses = theses.slice(2);
 
-        <!-- Left: text write-up -->
-        <div class="thesis-entry-text">
-          <span class="thesis-label">${t.label}</span>
-          <h3 class="thesis-entry-title">${t.title}</h3>
-          <p class="thesis-entry-writeup">${t.writeup}</p>
+    function thesisCard(t) {
+      return `
+        <div class="thesis-entry" id="thesis-entry-${t.num}">
 
-          <!-- Expandable abstract -->
-          <button class="abstract-toggle" data-target="abstract-${t.num}">
-            Read Abstract <span class="abstract-arrow">&#9660;</span>
-          </button>
-          <div class="abstract-body" id="abstract-${t.num}">
-            <p>${t.abstract}</p>
+          <!-- Left: text write-up -->
+          <div class="thesis-entry-text">
+            <span class="thesis-label">${t.label}</span>
+            <h3 class="thesis-entry-title">${t.title}</h3>
+            <p class="thesis-entry-writeup">${t.writeup}</p>
+
+            <!-- Keyword tags -->
+            ${t.tags && t.tags.length ? `<ul class="project-tech-list thesis-tags">${t.tags.map(tag => `<li>${tag}</li>`).join('')}</ul>` : ''}
+
+            <!-- Expandable abstract -->
+            <button class="abstract-toggle" data-target="abstract-${t.num}">
+              Read More <span class="abstract-arrow">&#9660;</span>
+            </button>
+            <div class="abstract-body" id="abstract-${t.num}">
+              <p>${t.abstract}</p>
+            </div>
           </div>
-        </div>
 
-        <!-- Right: image slideshow -->
-        <div class="thesis-entry-visual">
-          ${buildCarousel(t.num, t.slides)}
-        </div>
+          <!-- Right: image slideshow -->
+          <div class="thesis-entry-visual">
+            ${buildCarousel(t.num, t.slides)}
+          </div>
 
+        </div>`;
+    }
+
+    const visibleHTML = visibleTheses.map((t, i) =>
+      thesisCard(t) + (i < visibleTheses.length - 1 ? '<hr class="thesis-divider">' : '')
+    ).join('');
+
+    const hiddenHTML = hiddenTheses.length ? `
+      <hr class="thesis-divider thesis-divider-hidden" id="thesis-hidden-divider">
+      <div class="thesis-hidden-section" id="thesis-hidden-section">
+        ${hiddenTheses.map((t, i) =>
+      thesisCard(t) + (i < hiddenTheses.length - 1 ? '<hr class="thesis-divider">' : '')
+    ).join('')}
       </div>
-    `).join('<hr class="thesis-divider">');
+      <div class="thesis-see-more-wrap">
+        <button class="thesis-see-more-btn" id="thesis-see-more-btn">
+          <span class="see-more-label">See more</span>
+          <span class="see-more-arrow">&#9660;</span>
+        </button>
+      </div>` : '';
+
+    container.innerHTML = visibleHTML + hiddenHTML;
   },
 
   init() {
-    // Wire up "Read Abstract" toggles
+    // Wire up "Read More" toggles
     document.querySelectorAll('.abstract-toggle').forEach(btn => {
       btn.addEventListener('click', () => {
         const targetId = btn.dataset.target;
@@ -102,5 +132,22 @@ export default {
         arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
       });
     });
+
+    // Wire up "See more" toggle for hidden theses
+    const seeMoreBtn = document.getElementById('thesis-see-more-btn');
+    const hiddenSection = document.getElementById('thesis-hidden-section');
+    const hiddenDivider = document.getElementById('thesis-hidden-divider');
+    if (seeMoreBtn && hiddenSection) {
+      seeMoreBtn.addEventListener('click', () => {
+        const isOpen = hiddenSection.classList.toggle('open');
+        const arrow = seeMoreBtn.querySelector('.see-more-arrow');
+        const label = seeMoreBtn.querySelector('.see-more-label');
+        arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        label.textContent = isOpen ? 'See less' : 'See more';
+        if (hiddenDivider) hiddenDivider.style.display = isOpen ? '' : 'none';
+      });
+      // Start with divider hidden
+      if (hiddenDivider) hiddenDivider.style.display = 'none';
+    }
   },
 };

@@ -67,26 +67,70 @@ export default {
   title: 'Selected Projects',
 
   render(container) {
-    container.innerHTML = projects.map((p, i) => `
-      <div class="thesis-entry project-entry">
+    const VISIBLE_COUNT = 3;
+    const visibleProjects = projects.slice(0, VISIBLE_COUNT);
+    const hiddenProjects  = projects.slice(VISIBLE_COUNT);
 
-        <!-- Left: text write-up -->
-        <div class="thesis-entry-text">
-          <span class="thesis-label">${p.label}</span>
-          <h3 class="thesis-entry-title">${p.title}</h3>
-          <p class="thesis-entry-writeup">${p.desc}</p>
-          <ul class="project-tech-list">
-            ${p.tags.map(t => `<li>${t}</li>`).join('')}
-          </ul>
+    function projectCard(p, isLast) {
+      return `
+        <div class="thesis-entry project-entry">
+
+          <!-- Left: text write-up -->
+          <div class="thesis-entry-text">
+            <span class="thesis-label">${p.label}</span>
+            <h3 class="thesis-entry-title">${p.title}</h3>
+            <p class="thesis-entry-writeup">${p.desc}</p>
+            <ul class="project-tech-list">
+              ${p.tags.map(t => `<li>${t}</li>`).join('')}
+            </ul>
+          </div>
+
+          <!-- Right: image slideshow -->
+          <div class="thesis-entry-visual">
+            ${buildCarousel(p.id, p.images)}
+          </div>
+
         </div>
+        ${!isLast ? '<hr class="thesis-divider">' : ''}`;
+    }
 
-        <!-- Right: image slideshow -->
-        <div class="thesis-entry-visual">
-          ${buildCarousel(p.id, p.images)}
-        </div>
+    const visibleHTML = visibleProjects.map((p, i) =>
+      projectCard(p, i === visibleProjects.length - 1 && hiddenProjects.length === 0)
+    ).join('');
 
+    const hiddenHTML = hiddenProjects.length ? `
+      <hr class="thesis-divider thesis-divider-hidden" id="proj-hidden-divider">
+      <div class="thesis-hidden-section" id="proj-hidden-section">
+        ${hiddenProjects.map((p, i) =>
+          projectCard(p, i === hiddenProjects.length - 1)
+        ).join('')}
       </div>
-      ${i < projects.length - 1 ? '<hr class="thesis-divider">' : ''}
-    `).join('');
+      <div class="thesis-see-more-wrap">
+        <button class="thesis-see-more-btn" id="proj-see-more-btn">
+          <span class="see-more-label">See more</span>
+          <span class="see-more-arrow">&#9660;</span>
+        </button>
+      </div>` : '';
+
+    container.innerHTML = visibleHTML + hiddenHTML;
+  },
+
+  init() {
+    // Wire up "See more" toggle for hidden projects
+    const seeMoreBtn = document.getElementById('proj-see-more-btn');
+    const hiddenSection = document.getElementById('proj-hidden-section');
+    const hiddenDivider = document.getElementById('proj-hidden-divider');
+    if (seeMoreBtn && hiddenSection) {
+      seeMoreBtn.addEventListener('click', () => {
+        const isOpen = hiddenSection.classList.toggle('open');
+        const arrow = seeMoreBtn.querySelector('.see-more-arrow');
+        const label = seeMoreBtn.querySelector('.see-more-label');
+        arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
+        label.textContent = isOpen ? 'See less' : 'See more';
+        if (hiddenDivider) hiddenDivider.style.display = isOpen ? '' : 'none';
+      });
+      // Start with divider hidden
+      if (hiddenDivider) hiddenDivider.style.display = 'none';
+    }
   },
 };

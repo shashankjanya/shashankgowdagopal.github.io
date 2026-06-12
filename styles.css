@@ -488,6 +488,33 @@ body {
     border-radius: 4px;
 }
 
+/* GitHub link inline after project description */
+.project-github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: 6px;
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-family: monospace;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: var(--transition);
+}
+
+.project-github-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.project-github-icon {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    vertical-align: middle;
+}
+
 /* Thesis keyword tags — same pills, small bottom gap before Read More */
 .thesis-tags {
     margin-bottom: 1rem;

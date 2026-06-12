@@ -4,17 +4,7 @@ import projects from './sections/projects/projects.js';
 import interests from './sections/interests/interests.js';
 import contact from './sections/contact/contact.js';
 
-// Helper for section numbers
-function getSectionNumber(id) {
-    const numbers = {
-        about: '01.',
-        thesis: '02.',
-        projects: '03.',
-        interests: '04.',
-        contact: '05.'
-    };
-    return numbers[id] || '';
-}
+
 
 // Carousel Class Implementation
 class Carousel {
@@ -174,12 +164,8 @@ function initializePortfolio() {
     sections.forEach(sec => {
         const container = document.getElementById(sec.id);
         if (container) {
-            const num = getSectionNumber(sec.id);
             container.innerHTML = `
-                <h2 class="section-title">
-                    <span class="number">${num}</span>
-                    ${sec.title}
-                </h2>
+                <h2 class="section-title">${sec.title}</h2>
                 <div class="section-body"></div>
             `;
             const body = container.querySelector('.section-body');
@@ -225,6 +211,28 @@ function initializePortfolio() {
             navbar.style.boxShadow = 'none';
             navbar.style.padding = '1.25rem 0';
         }
+    });
+
+    // 6. Active nav link highlighting
+    const navLinks = document.querySelectorAll('.nav-links a:not(.btn)');
+    const sectionIds = ['about', 'thesis', 'projects', 'interests', 'contact'];
+
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                const activeLink = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+                if (activeLink) activeLink.classList.add('active');
+            }
+        });
+    }, {
+        rootMargin: '-40% 0px -55% 0px',
+        threshold: 0
+    });
+
+    sectionIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) navObserver.observe(el);
     });
 }
 

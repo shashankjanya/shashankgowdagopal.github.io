@@ -99,13 +99,7 @@ body {
     margin-left: 20px;
 }
 
-.section-title .number {
-    color: var(--accent);
-    font-family: monospace;
-    font-size: 1.1rem;
-    margin-right: 10px;
-    font-weight: 400;
-}
+
 
 /* Navigation */
 #navbar {
@@ -150,6 +144,23 @@ body {
 
 .nav-links a:hover:not(.btn) {
     color: var(--accent);
+}
+
+.nav-links a.active:not(.btn) {
+    color: var(--accent);
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-links a.active:not(.btn)::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 1.5px;
+    background: var(--accent);
+    border-radius: 2px;
 }
 
 /* Hero Section */

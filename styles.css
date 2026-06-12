@@ -812,11 +812,13 @@ body {
     line-height: 1.3;
 }
 
-.thesis-entry-writeup {
+.thesis-entry-abstract {
     font-size: 0.95rem;
     color: var(--text-secondary);
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
+    line-height: 1.8;
+    margin-top: 0.75rem;
+    border-left: 2px solid var(--glass-border);
+    padding-left: 1rem;
 }
 
 /* Abstract toggle button */

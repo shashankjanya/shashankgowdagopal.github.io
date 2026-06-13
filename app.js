@@ -19,6 +19,9 @@ class Carousel {
         this.currentIndex = 0;
         this.slideCount = this.slides.length;
         this.autoPlayInterval = null;
+        this.autoPlayDelay = 4000 + Math.random() * 2000; // fixed per instance
+        this.resumeTimer = null;
+        this.hovered = false;
 
         if (this.slideCount <= 1) {
             if (this.nextButton) this.nextButton.style.display = 'none';
@@ -39,7 +42,7 @@ class Carousel {
             if (index === 0) dot.classList.add('active');
             dot.addEventListener('click', () => {
                 this.goToSlide(index);
-                this.stopAutoPlay();
+                this.scheduleResume(); // resume after a pause, like button clicks
             });
             this.dotsContainer.appendChild(dot);
         });
@@ -75,9 +78,8 @@ class Carousel {
     }
 
     startAutoPlay() {
-        // Stagger autoplay delay slightly to prevent synchronized motion
-        const delay = 4000 + Math.random() * 2000;
-        this.autoPlayInterval = setInterval(() => this.nextSlide(), delay);
+        if (this.autoPlayInterval) return; // already running
+        this.autoPlayInterval = setInterval(() => this.nextSlide(), this.autoPlayDelay);
     }
 
     stopAutoPlay() {
@@ -87,12 +89,21 @@ class Carousel {
         }
     }
 
+    // After a manual nav action, wait 2 s then resume (unless still hovered)
+    scheduleResume() {
+        this.stopAutoPlay();
+        if (this.resumeTimer) clearTimeout(this.resumeTimer);
+        this.resumeTimer = setTimeout(() => {
+            if (!this.hovered) this.startAutoPlay();
+        }, 2000);
+    }
+
     addEventListeners() {
         if (this.nextButton) {
             this.nextButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.nextSlide();
-                this.stopAutoPlay();
+                this.scheduleResume();
             });
         }
 
@@ -100,12 +111,18 @@ class Carousel {
             this.prevButton.addEventListener('click', (e) => {
                 e.stopPropagation();
                 this.prevSlide();
-                this.stopAutoPlay();
+                this.scheduleResume();
             });
         }
 
-        this.element.addEventListener('mouseenter', () => this.stopAutoPlay());
-        this.element.addEventListener('mouseleave', () => this.startAutoPlay());
+        this.element.addEventListener('mouseenter', () => {
+            this.hovered = true;
+            this.stopAutoPlay();
+        });
+        this.element.addEventListener('mouseleave', () => {
+            this.hovered = false;
+            this.startAutoPlay();
+        });
 
         // Open Lightbox on image clicks
         this.slides.forEach(slide => {

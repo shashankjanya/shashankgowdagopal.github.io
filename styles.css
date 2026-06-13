@@ -605,6 +605,13 @@ body {
     box-shadow: 0 5px 15px rgba(2, 12, 27, 0.3);
 }
 
+/* Email card — make the address text read as a hyperlink */
+a.social-link-card span {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .contact-icon {
     width: 20px;
     height: 20px;
@@ -648,7 +655,7 @@ body {
     height: 100%;
     position: relative;
     overflow: hidden;      /* clip the blurred backdrop */
-    background: var(--bg-card);
+    background: #e0e0e0;
 }
 
 /* Blurred backdrop — a duplicated <img> injected by buildCarousel() */
@@ -659,7 +666,7 @@ body {
     width: 124%;
     height: 124%;
     object-fit: cover;
-    filter: blur(22px) brightness(0.35) saturate(0.6);
+    filter: blur(22px) brightness(0.82) grayscale(0.5) saturate(0.4);
     z-index: 0;
     pointer-events: none;
 }

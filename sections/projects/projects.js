@@ -64,26 +64,28 @@ const projects = [
     // video: 'sections/projects/pic/test.mp4'
   },
   {
-    id: 'proj-sae-aero-2023',
-    label: 'SAE Aero Design Challenge 2023',
-    title: 'STOL UAV for Large-Volume Payloads',
-    desc: 'Served as Flight Mechanics Head to design a tandem-wing, twin-prop UAV with internal payload carriage and STOL capabilities. Maximized lift by integrating novel high-lift devices and aero-propulsive coupling effects.',
-    tags: ['Tandem-Wing', 'STOL', 'Aero-Propulsive Coupling'],
-    images: [
-      { src: 'sections/projects/pic/adcw_1.jpg', alt: 'STOL UAV CAD', label: 'UAV CAD Model' },
-      // { src: 'sections/projects//images/sae_aero_flight.png', alt: 'STOL UAV Flight', label: 'Flight Testing' }
-    ]
-  },
-  {
     id: 'proj-aerothon',
     label: 'SAE INDIA AeroTHON 2023',
     title: 'Rotary-Wing UAV for Manual and Autonomous Payload Delivery',
     desc: 'Led technical design and piloted a quadcopter for autonomous and manual payload delivery. Executed UAV sizing, CAD development, avionics integration, and controller tuning. Integrated FPV and image processing systems, resulting in the Best Manual Flight Award.',
-    tags: ['CAD', 'Avionics Integration', 'Image Processing', 'Controller Tuning', 'FPV'],
+    tags: ['CAD', 'Avionics Integration', 'Controller Tuning', '3D Printing'],
     images: [
-      { src: 'sections/projects/pic/aerpthon_2_1.jpg', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
-      // { src: 'sections/projects/images/aerothon_flight.png', alt: 'AeroTHON Flight', label: 'Competition Flight' },
+      { src: 'sections/projects/pic/aerothon_2_2.png', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
+      { src: 'sections/projects/pic/aerothon_2_3.png', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
+      { src: 'sections/projects/pic/aerothon_2_1.jpg', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
     ],
+  },
+  {
+    id: 'proj-sae-aero-2023',
+    label: 'SAE Aero Design Challenge 2023',
+    title: 'STOL UAV for Large-Volume Payloads',
+    desc: 'Served as Flight Mechanics Head to design a tandem-wing, twin-prop UAV with internal payload carriage and STOL capabilities. Maximized lift by integrating novel high-lift devices and aero-propulsive coupling effects.',
+    tags: ['Tandem-Wing', 'STOL', 'Aero-Propulsive Coupling', 'Composite Fabrication'],
+    images: [
+      { src: 'sections/projects/pic/adcw_2.png', alt: 'STOL UAV Flight', label: 'Flight Testing' },
+      { src: 'sections/projects/pic/adcw_3.png', alt: 'STOL UAV Flight', label: 'Flight Testing' },
+      { src: 'sections/projects/pic/adcw_1.jpg', alt: 'STOL UAV CAD', label: 'UAV CAD Model' }
+    ]
   },
   {
     id: 'proj-saeiss-aero-2022',
@@ -92,8 +94,9 @@ const projects = [
     desc: 'Designed an RC plane optimized for beginner pilots, incorporating trade-off studies between aircraft size and payload fraction. Led the fabrication process including laser cutting and 3D printing, securing All India Rank 8 as Team Leader and Pilot.',
     tags: ['Fixed-Wing', 'Payload Fraction', 'Trade-off Studies', 'Laser Cutting', '3D Printing'],
     images: [
+      { src: 'sections/projects/pic/adc_2.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' },
+      { src: 'sections/projects/pic/adc_3.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' },
       { src: 'sections/projects/pic/adc_1.png', alt: 'SAEISS UAV CAD', label: 'UAV CAD Model' },
-      // { src: 'sections/projects/images/saeiss_aero_flight.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' }
     ]
   }
 ];
@@ -132,7 +135,12 @@ export default {
 
           <!-- Right: video or image slideshow -->
           <div class="thesis-entry-visual">
-            ${p.video ? buildVideoPlayer(p.id, p.video) : buildCarousel(p.id, p.images)}
+            ${p.video
+          ? buildVideoPlayer(p.id, p.video)
+          : (p.images && p.images.length)
+            ? buildCarousel(p.id, p.images)
+            : `<div class="compact-carousel" style="display:flex;align-items:center;justify-content:center;background:var(--bg-card-hover);color:var(--text-secondary);font-size:0.85rem;font-family:monospace;border:1px solid var(--glass-border);border-radius:6px;aspect-ratio:4/3;">No media yet</div>`
+        }
           </div>
 
         </div>

@@ -15,33 +15,33 @@ export default {
           </p>
           
           <div class="skills-section-inside">
+            
             <h3 class="subsection-title">Technical Expertise</h3>
             <div class="skills-grid-inside">
               <div class="skill-col">
                 <h4>Languages</h4>
                 <ul class="skill-list-inside">
-                  <li>C++ (Embedded, PX4 Firmware)</li>
-                  <li>Python (Data Analysis, Scripts)</li>
-                  <li>MATLAB (Control Design, Modeling)</li>
-                  <li>HTML / CSS / JavaScript</li>
+                  <li>Python</li>
+                  <li>MATLAB</li>
                 </ul>
               </div>
-              <div class="skill-col">
+             <div class="skill-col">
                 <h4>Tools & Systems</h4>
                 <ul class="skill-list-inside">
-                  <li>Simulink & Stateflow</li>
-                  <li>PX4 Autopilot Stack & ROS</li>
-                  <li>SolidWorks / Fusion 360</li>
+                  <li>Simulink</li>
+                  <li>PX4 Autopilot Stack</li>
                   <li>Git / GitHub Version Control</li>
+                  <li>SolidWorks</li>
                 </ul>
               </div>
               <div class="skill-col">
                 <h4>Engineering Domains</h4>
                 <ul class="skill-list-inside">
-                  <li>Flight Control Tuning (PID, LQR)</li>
+                  <li>Flight Dynamics Modeling</li>
+                  <li>Flight Controller Tuning</li>
+                  <li>Piloting Fixed Wing & Rotary Wing UAVs</li>
+                  <li>UAV Flight Log Analysis</li>
                   <li>UAV Sizing & Performance</li>
-                  <li>Mathematical Modeling (6-DOF)</li>
-                  <li>Aerodynamics (XFLR5, CFD)</li>
                 </ul>
               </div>
             </div>
@@ -58,7 +58,7 @@ export default {
               </svg>
               <span>Aerospace Engineer</span>
             </div>
-            <img src="sections/about/images/profile.jpg" alt="Profile Picture" class="about-img" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+            <img src="sections/about/pic.jpg" alt="Profile Picture" class="about-img" onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
           </div>
         </div>
       </div>

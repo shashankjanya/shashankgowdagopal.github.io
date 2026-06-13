@@ -302,7 +302,7 @@ body {
     width: 100%;
     aspect-ratio: 1;
     border-radius: 6px;
-    background: var(--accent);
+    background: var(--bg-card-hover);
     box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.7);
     transition: var(--transition);
 }
@@ -323,7 +323,6 @@ body {
 
 .about-img-wrapper:hover {
     transform: translate(-4px, -4px);
-    background: transparent;
 }
 
 .about-img-wrapper:hover::after {
@@ -335,14 +334,11 @@ body {
     height: 100%;
     object-fit: cover;
     border-radius: 6px;
-    mix-blend-mode: multiply;
-    filter: grayscale(100%) contrast(1.2);
     transition: var(--transition);
 }
 
 .about-img-wrapper:hover .about-img {
-    mix-blend-mode: normal;
-    filter: none;
+    filter: brightness(1.05);
 }
 
 .about-img-fallback {

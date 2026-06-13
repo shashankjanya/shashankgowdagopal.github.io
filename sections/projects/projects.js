@@ -26,8 +26,12 @@ function buildCarousel(id, images) {
         </svg>
         <span>${label}</span>
       </div>
+      <!-- Blurred backdrop: same src, covers slide, blurred + dimmed as filler -->
+      <img src="${src}" alt="" class="carousel-img-backdrop" aria-hidden="true"
+           onerror="this.style.display='none';">
+      <!-- Main image: contained (full image visible, no cropping) -->
       <img src="${src}" alt="${alt}" class="carousel-img"
-           onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
+           onerror="this.style.display='none'; this.previousElementSibling.style.display='none'; this.closest('.carousel-slide').querySelector('.carousel-fallback').style.display='flex';">
     </div>`).join('');
 
   return `
@@ -49,6 +53,15 @@ const projects = [
     desc: 'This project is a non linear dynamics model and simulation for a single propeller tail sitter UAV built in MATLAB and Simulink. Flight control is achieved by thrust vectoring through aerodynamic flaps placed directly in the propeller slip stream. It features a fundamental cascaded PID control architecture designed specifically for deployment on the PX4 flight stack.',
     tags: ['MATLAB', 'Simulink', 'PID Controller'],
     video: 'sections/projects/pic/test.mp4'
+  },
+  {
+    id: 'Personal Project2',
+    label: 'Personal Project (2025)',
+    githubLink: { href: 'https://github.com/shashankjanya/constraint-fly', label: 'constrsint-fly' },
+    title: 'Constraint-fly',
+    desc: 'This project is a conceptual sizing tool for fixed wing UAVs written in MATLAB. It is based on the concept of fixed electric propulsion system sizing driven by the constraint analysis of performance requirements. The repository contains dedicated modules for different aircraft disciplines including aerodynamics mass estimation and propulsion which are fundamentally based on semi empirical formulations.',
+    tags: ['MATLAB', 'Python', 'UAV conceptual design'],
+    // video: 'sections/projects/pic/test.mp4'
   },
   {
     id: 'proj-sae-aero-2023',
@@ -152,7 +165,7 @@ export default {
     projects.forEach(p => {
       if (!p.video) return;
       const overlay = document.getElementById(`${p.id}-overlay`);
-      const video   = document.getElementById(`${p.id}-video`);
+      const video = document.getElementById(`${p.id}-video`);
       if (!overlay || !video) return;
       overlay.addEventListener('click', () => {
         overlay.style.opacity = '0';

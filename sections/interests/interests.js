@@ -8,26 +8,54 @@ export default {
           
           <div class="interest-card">
             <div class="interest-icon">
+              <!-- Lightbulb: clarity, reducing to fundamentals, illuminating ideas -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="12 2 2 7 12 12 22 7 12 2" />
-                <polyline points="2 17 12 22 22 17" />
-                <polyline points="2 12 12 17 22 12" />
+                <path d="M9 18h6" />
+                <path d="M10 22h4" />
+                <path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z" />
               </svg>
             </div>
-            <h3>Autonomous Systems</h3>
-            <p>Fascinated by UAV swarm robotics, automated collision avoidance path-planning, and deploying deep learning on low-power embedded microcontrollers for drone navigation.</p>
+            <h3>Teaching</h3>
+            <p>I like to reduce every topic to its most fundamental aspects. I want to explain things in a way where no one has to rely on pure memorization; the concept should just make sense. I have actively applied this by leading multiple teaching sessions for my classmates and junior students, specifically focusing on UAV conceptual design and flight dynamics.</p>
           </div>
 
           <div class="interest-card">
             <div class="interest-icon">
+              <!-- Zap/lightning: fast-paced, high-energy, dynamic environments -->
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
-                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
-                <line x1="12" y1="22.08" x2="12" y2="12" />
+                <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
               </svg>
             </div>
-            <h3>RC Modeling & Flight</h3>
-            <p>Active builder and pilot of radio-controlled gliders, custom fixed-wing model aircraft, and FPV quadcopters. Testing out control loop responses in manual pilot modes.</p>
+            <h3>Dynamic Environment</h3>
+            <p>I thrive in fast-paced, high-pressure environments. Whether it is an engineering sprint or the backstage energy of a live concert, being surrounded by highly passionate people working toward a shared goal is a major source of motivation for me.</p>
+          </div>
+
+          <div class="interest-card">
+            <div class="interest-icon">
+              <!-- Music note + waveform: keyboard diploma, cinematic scores, composition -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13" />
+                <circle cx="6" cy="18" r="3" />
+                <circle cx="18" cy="16" r="3" />
+              </svg>
+            </div>
+            <h3>Music Production</h3>
+            <p>I hold a formal diploma in keyboard, but I have also taught myself several other instruments, alongside music production. I have a deep appreciation for cinematic scores and their crucial role in delivering a story. To better understand musical composition, I spend my time actively recreating these complex scores from scratch.</p>
+          </div>
+
+          <div class="interest-card">
+            <div class="interest-icon">
+              <!-- CPU/chip: microcontrollers, open-source hardware, Teensy boards -->
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="7" y="7" width="10" height="10" rx="1" />
+                <path d="M9 7V4" /><path d="M12 7V4" /><path d="M15 7V4" />
+                <path d="M9 20v-3" /><path d="M12 20v-3" /><path d="M15 20v-3" />
+                <path d="M7 9H4" /><path d="M7 12H4" /><path d="M7 15H4" />
+                <path d="M20 9h-3" /><path d="M20 12h-3" /><path d="M20 15h-3" />
+              </svg>
+            </div>
+            <h3>Hardware Prototyping</h3>
+            <p>I spend my downtime researching the potential of open-source hardware. I love exploring community-driven projects and taking pocket-sized boards, like the Teensy, to integrate into my own custom physical setups.</p>
           </div>
 
         </div>

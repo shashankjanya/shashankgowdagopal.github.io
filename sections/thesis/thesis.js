@@ -1,37 +1,3 @@
-// Helper to build a thesis carousel HTML for a given thesis number and slide count
-function buildCarousel(thesisNum, slideCount) {
-  const slides = Array.from({ length: slideCount }, (_, i) => {
-    const picName = `thesis_${thesisNum}_${i + 1}`;
-    return `
-      <div class="carousel-slide">
-        <div class="carousel-fallback">
-          <svg viewBox="0 0 200 120" fill="none" stroke="currentColor">
-            <rect x="20" y="15" width="160" height="90" rx="4" stroke-width="1"/>
-            <line x1="20" y1="45" x2="180" y2="45" stroke-width="0.5" stroke-dasharray="4 3"/>
-            <circle cx="100" cy="72" r="18" stroke-width="1"/>
-            <line x1="88" y1="72" x2="112" y2="72" stroke-width="1"/>
-            <line x1="100" y1="60" x2="100" y2="84" stroke-width="1"/>
-          </svg>
-          <span>${picName}</span>
-        </div>
-        <img src="sections/thesis/images/${picName}.jpg"
-             alt="${picName}"
-             class="carousel-img"
-             onerror="this.style.display='none'; this.previousElementSibling.style.display='flex';">
-      </div>`;
-  });
-
-  return `
-    <div class="carousel thesis-carousel" id="thesis-${thesisNum}-carousel">
-      <div class="carousel-track">
-        ${slides.join('')}
-      </div>
-      <button class="carousel-nav prev">&#10094;</button>
-      <button class="carousel-nav next">&#10095;</button>
-      <div class="carousel-indicators"></div>
-    </div>`;
-}
-
 export default {
   id: 'thesis',
   title: 'Thesis Work',
@@ -42,96 +8,100 @@ export default {
         num: 1,
         label: "Master's Thesis",
         title: 'Implementation and Validation of a Detailed Tail Sizing Method and Application on Future Aircraft',
-        writeup: '    \item Implemented \textbf{detailed tail sizing} methodologies for general transport aircraft in Python within the Bauhaus Luftfahrt \textbf{Aircraft Design Environment} (BLADE) \item Analyzed \textbf{aircraft-level performance} improvements of detailed tail sizing on \textbf{future aircraft}, such as \textbf{LH$_2$} concepts, compared to conservative empirical tail sizing.',
-        abstract: "Traditional aircraft conceptual design relies heavily on empirical tail estimation methods. However, these methods are restricted to conventional configurations with strong correlations to historical datasets. For future concepts utilizing liquid hydrogen (LH2) as energy carrier, drastic shifts in geometric parameters and mass distributions render these rapid sizing methods inadequate. In light of this, my Master's thesis focused on developing and implementing a high-fidelity, stability and control (S&C) driven empennage sizing methodology into the Bauhaus Luftfahrt Aircraft Design Environment (BLADE). <br> <br> The core engineering tasks involved modeling the critical S&C constraints for both the longitudinal and directional planes, integrating semi-empirical aerodynamic prediction models based on DATCOM formulations, and writing comprehensive test functions to verify the Python module. The framework was successfully validated against publicly available aircraft data before being applied to novel LH2 configurations. Subsequent analytical studies focused on quantifying aircraft-level performance benefits compared to empirically sized baselines, and conducting numerical sensitivity analyses to evaluate the robustness of the implemented sizing assumptions.",
-        tags: ['Aircraft Stability & Control', 'Empennage Sizing', 'LH2 Aircraft', 'DATCOM', 'Python', 'GitLab'],
-        slides: 0,
+        teaser: 'Implemented a high-fidelity stability & control driven empennage sizing methodology in Python within the Bauhaus Luftfahrt Aircraft Design Environment (BLADE), then applied it to novel LH₂ aircraft configurations.',
+        abstract: "Aircraft conceptual design studies often restricts tail sizing to rapid estimation methods. However, these methods are restricted to conventional configurations with strong correlations to historical datasets. For future concepts utilizing liquid hydrogen (LH₂) as energy carrier, drastic shifts in geometric parameters and mass distributions make these rapid sizing methods inadequate. In light of this, my Master's thesis focused on developing and implementing a high-fidelity, stability and control (S&C) driven empennage sizing methodology into the Bauhaus Luftfahrt Aircraft Design Environment (BLADE). <br><br> The core engineering tasks involved modeling the critical S&C constraints for both the horizontal and the vertical tailplanes, integrating semi-empirical aerodynamic prediction models based on DATCOM formulations, and writing comprehensive test functions to verify the Python module. The framework was successfully validated against publicly available aircraft data before being applied to novel LH₂ configurations. Subsequent analytical studies focused on quantifying aircraft-level performance benefits compared to empirically sized baselines, and conducting sensitivity analyses to evaluate the robustness of the implemented sizing methodology.",
+        tags: ['Aircraft Stability & Control', 'Empennage Sizing', 'LH₂ Aircraft', 'DATCOM', 'Python', 'GitLab'],
       },
       {
         num: 2,
-        label: 'Semister Thesis',
+        label: 'Semester Thesis',
         title: 'In-Flight System Identification and Parameter Estimation',
-        writeup: 'Short description of the second thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
-        abstract: 'Flight testing for system identification is often costly, primarily because of the time required to obtain parameter estimates of sufficient quality. In light of this, a framework for in-flight system identification and parameter estimation was developed in Matlab/Simulink in this work. The fundamental principle was to sequentially apply standard multistep inputs (such as doublets, 2-1-1, and 3-2-1-1) with increasing complexity, designing in-flight based on previously estimated parameters, to assess the short-period and Dutch-roll characteristics, including the actuator dynamics parameters. <br> <br>The implemented framework was tested on a non-linear simulation of a GTM-T2 sub-scale demonstrator aircraft, with case studies to evaluate the effect of modifying the fundamental base time-step used to design multistep signals on actuators with different bandwidths.',
-        tags: ['Simulink', 'MATLAB', 'System Identification'],
-        slides: 0,
+        teaser: 'Developed a MATLAB/Simulink framework for sequential in-flight system identification, designing multistep inputs adaptively during flight to characterize short-period and Dutch-roll dynamics.',
+        abstract: 'Flight testing for system identification is often costly, primarily because of the time required to obtain parameter estimates of sufficient quality. In light of this, a framework for in-flight system identification and parameter estimation was developed in MATLAB/Simulink in this work. The fundamental principle was to sequentially apply standard multistep inputs (such as doublets, 2-1-1, and 3-2-1-1) with increasing complexity, designing in-flight based on previously estimated parameters, to assess the short-period and Dutch-roll characteristics, including the actuator dynamics parameters. <br><br>The implemented framework was tested on a non-linear simulation of a GTM-T2 sub-scale demonstrator aircraft, with case studies to evaluate the effect of modifying the fundamental base time-step used to design multistep signals on actuators with different bandwidths.',
+        tags: ['MATLAB', 'Simulink', 'System Identification', 'Flight Dynamics'],
       },
       {
         num: 3,
         label: "Bachelor's Thesis",
         title: 'Design Analysis and Fabrication of a Tandem-Wing UAV',
-        writeup: 'Short description of the third thesis goes here. Provide a brief overview of the topic, methodology, and key outcomes. This should be 2–3 sentences.',
-        abstract: 'Civilian surveillance applications demand unmanned aerial vehicles capable of sustaining low operating velocities while accommodating large payload volumes and extended endurance. To successfully satisfy these stringent operational constraints, our team conceptualized, prototyped, and flight tested a tandem wing configuration. <br><br> My core technical contributions spanned the entire aircraft development lifecycle. I executed the initial conceptual sizing alongside aerodynamic coefficient calculations. Utilizing these parameters, I developed the flight dynamics models required to design and implement a fundamental pitch attitude hold autopilot. Furthermore, I planned and directed the physical fabrication and prototyping process from end to end.',
-        tags: ['Flight dynamics modeling', 'Simulink', 'MATLAB', 'UAV sizing', 'UAV Fabrication'],
-        slides: 0,
+        teaser: 'Conceptualized, fabricated, and flight-tested a tandem-wing UAV, covering conceptual sizing, aerodynamic analysis, flight dynamics modelling, autopilot design, and end-to-end physical prototyping.',
+        abstract: 'Civilian surveillance applications demand unmanned aerial vehicles capable of sustaining low operating velocities while accommodating large payload volumes and extended endurance. To successfully satisfy these stringent operational constraints, our team conceptualized, prototyped, and flight tested a tandem wing configuration. <br><br>My core technical contributions spanned the entire aircraft development lifecycle. I executed the initial conceptual sizing alongside aerodynamic coefficient calculations. Utilizing these parameters, I developed the flight dynamics models required to design and implement a fundamental pitch attitude hold autopilot. Furthermore, I planned and directed the physical fabrication and prototyping process from end to end.',
+        tags: ['UAV Sizing', 'Flight Dynamics Modelling', 'Autopilot Design', 'MATLAB', 'Simulink'],
       },
     ];
-    // da
 
-    const visibleTheses = theses.slice(0, 2);
-    const hiddenTheses = theses.slice(2);
+    // Build card row + one shared expand panel
+    const cardsHTML = theses.map(t => `
+      <div class="thesis-card" id="thesis-card-${t.num}" role="button" tabindex="0" aria-expanded="false">
+        <span class="thesis-label">${t.label}</span>
+        <h3 class="thesis-card-title">${t.title}</h3>
+        <ul class="project-tech-list thesis-card-tags">
+          ${t.tags.map(tag => `<li>${tag}</li>`).join('')}
+        </ul>
+        <span class="thesis-card-readmore">
+          Read more <span class="thesis-card-arrow">▾</span>
+        </span>
+      </div>`).join('');
 
-    function thesisCard(t) {
-      return `
-        <div class="thesis-entry" id="thesis-entry-${t.num}">
+    const panelsHTML = theses.map(t => `
+      <div class="thesis-abstract-panel" id="thesis-panel-${t.num}">
+        <div class="thesis-abstract-inner">
+          <p>${t.abstract}</p>
+        </div>
+      </div>`).join('');
 
-          <!-- Left: text -->
-          <div class="thesis-entry-text">
-            <span class="thesis-label">${t.label}</span>
-            <h3 class="thesis-entry-title">${t.title}</h3>
-
-            <!-- Keyword tags -->
-            ${t.tags && t.tags.length ? `<ul class="project-tech-list thesis-tags">${t.tags.map(tag => `<li>${tag}</li>`).join('')}</ul>` : ''}
-
-            <!-- Abstract shown directly -->
-            <p class="thesis-entry-abstract">${t.abstract}</p>
-          </div>
-
-          <!-- Right: image slideshow -->
-          <div class="thesis-entry-visual">
-            ${buildCarousel(t.num, t.slides)}
-          </div>
-
-        </div>`;
-    }
-
-    const visibleHTML = visibleTheses.map((t, i) =>
-      thesisCard(t) + (i < visibleTheses.length - 1 ? '<hr class="thesis-divider">' : '')
-    ).join('');
-
-    const hiddenHTML = hiddenTheses.length ? `
-      <hr class="thesis-divider thesis-divider-hidden" id="thesis-hidden-divider">
-      <div class="thesis-hidden-section" id="thesis-hidden-section">
-        ${hiddenTheses.map((t, i) =>
-      thesisCard(t) + (i < hiddenTheses.length - 1 ? '<hr class="thesis-divider">' : '')
-    ).join('')}
-      </div>
-      <div class="thesis-see-more-wrap">
-        <button class="thesis-see-more-btn" id="thesis-see-more-btn">
-          <span class="see-more-label">See more</span>
-          <span class="see-more-arrow">&#9660;</span>
-        </button>
-      </div>` : '';
-
-    container.innerHTML = visibleHTML + hiddenHTML;
+    container.innerHTML = `
+      <div class="thesis-cards-row">${cardsHTML}</div>
+      ${panelsHTML}
+    `;
   },
 
   init() {
-    // Wire up "See more" toggle for hidden theses
-    const seeMoreBtn = document.getElementById('thesis-see-more-btn');
-    const hiddenSection = document.getElementById('thesis-hidden-section');
-    const hiddenDivider = document.getElementById('thesis-hidden-divider');
-    if (seeMoreBtn && hiddenSection) {
-      seeMoreBtn.addEventListener('click', () => {
-        const isOpen = hiddenSection.classList.toggle('open');
-        const arrow = seeMoreBtn.querySelector('.see-more-arrow');
-        const label = seeMoreBtn.querySelector('.see-more-label');
-        arrow.style.transform = isOpen ? 'rotate(180deg)' : 'rotate(0deg)';
-        label.textContent = isOpen ? 'See less' : 'See more';
-        if (hiddenDivider) hiddenDivider.style.display = isOpen ? '' : 'none';
-      });
-      // Start with divider hidden
-      if (hiddenDivider) hiddenDivider.style.display = 'none';
+    let openNum = null;
+
+    function closePanel(num) {
+      const card = document.getElementById(`thesis-card-${num}`);
+      const panel = document.getElementById(`thesis-panel-${num}`);
+      if (!card || !panel) return;
+      panel.style.maxHeight = '0';
+      panel.classList.remove('open');
+      card.classList.remove('active');
+      card.setAttribute('aria-expanded', 'false');
+      const arrow = card.querySelector('.thesis-card-arrow');
+      if (arrow) arrow.style.transform = 'rotate(0deg)';
     }
+
+    function openPanel(num) {
+      const card = document.getElementById(`thesis-card-${num}`);
+      const panel = document.getElementById(`thesis-panel-${num}`);
+      if (!card || !panel) return;
+      panel.classList.add('open');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+      card.classList.add('active');
+      card.setAttribute('aria-expanded', 'true');
+      const arrow = card.querySelector('.thesis-card-arrow');
+      if (arrow) arrow.style.transform = 'rotate(180deg)';
+    }
+
+    [1, 2, 3].forEach(num => {
+      const card = document.getElementById(`thesis-card-${num}`);
+      if (!card) return;
+
+      const toggle = () => {
+        if (openNum === num) {
+          closePanel(num);
+          openNum = null;
+        } else {
+          if (openNum !== null) closePanel(openNum);
+          openNum = num;
+          openPanel(num);
+        }
+      };
+
+      card.addEventListener('click', toggle);
+      card.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); }
+      });
+    });
   },
 };

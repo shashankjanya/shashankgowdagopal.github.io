@@ -51,7 +51,7 @@ const projects = [
     githubLink: { href: 'https://github.com/shashankjanya/solocopter', label: 'solocopter' },
     title: 'Solocopter',
     desc: 'This project is a non linear dynamics model and simulation for a single propeller tail sitter UAV built in MATLAB and Simulink. Flight control is achieved by thrust vectoring through aerodynamic flaps placed directly in the propeller slip stream. It features a fundamental cascaded PID control architecture designed specifically for deployment on the PX4 flight stack.',
-    tags: ['MATLAB', 'Simulink', 'PID Controller'],
+    tags: ['MATLAB', 'Simulink', 'Flight Dynamics Modelling', 'Flight Control'],
     video: 'sections/projects/pic/test.mp4'
   },
   {
@@ -65,10 +65,25 @@ const projects = [
   },
   {
     id: 'proj-aerothon',
-    label: 'SAE INDIA AeroTHON 2023',
+    label: 'UAV Design Competetion - SAEINDIA AeroTHON 2023',
     title: 'Rotary-Wing UAV for Manual and Autonomous Payload Delivery',
-    desc: 'Led technical design and piloted a quadcopter for autonomous and manual payload delivery. Executed UAV sizing, CAD development, avionics integration, and controller tuning. Integrated FPV and image processing systems, resulting in the Best Manual Flight Award.',
-    tags: ['CAD', 'Avionics Integration', 'Controller Tuning', '3D Printing'],
+    tags: ['SolidWorks CAD', 'Avionics Integration', 'Ardupilot', 'PID Tuning', '3D Printing'],
+    details: {
+      intro: 'Collaborated within a team to develop a rotary-wing UAV prototype for autonomous and manual healthcare package delivery to remote locations, achieving the Best Manual Flight award in competition.',
+      specs: [
+        { label: 'MTOM', value: '1.9 kg' },
+        { label: 'Payload', value: '0.2 kg' },
+        { label: 'Wheelbase', value: '0.48 m' },
+        { label: 'Flight Time', value: '8.5 min @ ISA' },
+        { label: 'Mission Envelope', value: ' Cruise: 5 m/s @ 30 m, Climb and Descent: 2 m/s' }
+      ],
+      contributions: [
+        { heading: 'Design & Sizing', text: 'Conducted configuration tradeoff studies and developed the complete CAD model in SolidWorks.' },
+        { heading: 'Performance Analysis', text: 'Executed detailed mission analysis and modelled the propulsion system using experimental wind-tunnel data.' },
+        { heading: 'Systems Integration', text: 'Directed the physical fabrication with carbon fiber and 3D printed components, performed   avionics hardware setup, and Ardupilot software configuration.' },
+        { heading: 'Flight Testing', text: 'Served as Pilot and manually tuned PID controllers through rigorous flight testing and log analysis.' },
+      ],
+    },
     images: [
       { src: 'sections/projects/pic/aerothon_2_2.png', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
       { src: 'sections/projects/pic/aerothon_2_3.png', alt: 'AeroTHON CAD', label: 'Payload Mechanism CAD' },
@@ -77,10 +92,25 @@ const projects = [
   },
   {
     id: 'proj-sae-aero-2023',
-    label: 'SAE Aero Design Challenge 2023',
-    title: 'STOL UAV for Large-Volume Payloads',
-    desc: 'Served as Flight Mechanics Head to design a tandem-wing, twin-prop UAV with internal payload carriage and STOL capabilities. Maximized lift by integrating novel high-lift devices and aero-propulsive coupling effects.',
-    tags: ['Tandem-Wing', 'STOL', 'Aero-Propulsive Coupling', 'Composite Fabrication'],
+    label: 'UAV Design Competetion - SAE Aero Design West 2023',
+    title: 'Tandem-Wing STOL UAV for Large-Volume Payloads',
+    tags: ['UAV Conceptual Design', 'STOL', 'Stability Analysis', 'Composite Fabrication'],
+    details: {
+      intro: 'Collaborated within a team to develop a highly constrained fixed-wing UAV for competition, uniquely configured to maintain stability while maximizing lifting surface area for low-velocity operations.',
+      specs: [
+        { label: 'MTOM', value: '3.7 kg' },
+        { label: 'Payload', value: '1.6 kg' },
+        { label: 'Wingspan', value: '0.93 m' },
+        { label: 'Flight Time', value: '3 min @ ISA' },
+        { label: 'Mission Envelope', value: ' Cruise: 14 m/s @ 50 m, Takeoff Roll: ~ 3 m' }
+      ],
+      contributions: [
+        { heading: 'Conceptual Design', text: 'Executed configuration tradeoff studies to maximize lifting surface area within a wingspan constraint < 1m.' },
+        { heading: 'Stability Analysis', text: 'Analyzed stability and control characteristics to determine the incidence angles of the front and aft wings.' },
+        { heading: 'Fabrication', text: 'Executed the physical fabrication process, involving composite layup techniques and conventional RC materials.' },
+        { heading: 'Flight Testing', text: 'Served as Pilot, executing test flights to validate the ultra-short takeoff performance constraints.' },
+      ],
+    },
     images: [
       { src: 'sections/projects/pic/adcw_2.png', alt: 'STOL UAV Flight', label: 'Flight Testing' },
       { src: 'sections/projects/pic/adcw_3.png', alt: 'STOL UAV Flight', label: 'Flight Testing' },
@@ -89,10 +119,24 @@ const projects = [
   },
   {
     id: 'proj-saeiss-aero-2022',
-    label: 'SAEISS Aero Design Challenge 2022',
-    title: 'Fixed-Wing UAV Designed for High Payload Weight Fraction and Rapid Assembly',
-    desc: 'Designed an RC plane optimized for beginner pilots, incorporating trade-off studies between aircraft size and payload fraction. Led the fabrication process including laser cutting and 3D printing, securing All India Rank 8 as Team Leader and Pilot.',
-    tags: ['Fixed-Wing', 'Payload Fraction', 'Trade-off Studies', 'Laser Cutting', '3D Printing'],
+    label: 'UAV Design Competetion - SAINDIA Aero Design Challenge 2022',
+    title: 'Fixed-Wing UAV for High Stability and Payload Fraction',
+    tags: ['UAV Conceptual Design', 'Stability Analysis', 'Empennage Sizing'],
+    details: {
+      intro: 'Engineered a fixed-wing UAV specifically designed for beginner pilots, featuring enhanced static margins to guarantee highly stable and forgiving flight dynamics.',
+      specs: [
+        { label: 'MTOM', value: '1.9 kg' },
+        { label: 'Payload', value: '1.0 kg' },
+        { label: 'Wingspan', value: '1.26 m' },
+        { label: 'Flight Time', value: '4 min @ ISA' },
+        { label: 'Mission Envelope', value: 'Cruise: 11 m/s @ 50 m, Hand Launched' },
+      ],
+      contributions: [
+        { heading: 'Conceptual Design', text: 'Executed overall aircraft sizing and detailed empennage design for high static margins and beginner-friendly stability.' },
+        { heading: 'Fabrication', text: 'Executed the physical fabrication and assembly process utilizing conventional RC-grade materials.' },
+        { heading: 'Flight Testing', text: 'Served as Pilot, executing test flights to validate the targeted stability and control characteristics.' },
+      ],
+    },
     images: [
       { src: 'sections/projects/pic/adc_2.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' },
       { src: 'sections/projects/pic/adc_3.png', alt: 'SAEISS UAV Flight', label: 'Flight Testing' },
@@ -127,7 +171,19 @@ export default {
                 ${p.githubLink.label}
               </a>` : ''}
             </h3>
-            <p class="thesis-entry-writeup">${p.desc}</p>
+            ${p.details ? `
+              <p class="thesis-entry-writeup">${p.details.intro}</p>
+              <div class="proj-specs-grid">
+                ${p.details.specs.map(s => `
+                  <div class="proj-spec-item">
+                    <span class="proj-spec-label">${s.label}</span>
+                    <span class="proj-spec-value">${s.value}</span>
+                  </div>`).join('')}
+              </div>
+              <ul class="proj-contributions">
+                ${p.details.contributions.map(c => `
+                  <li><strong>${c.heading}:</strong> ${c.text}</li>`).join('')}
+              </ul>` : `<p class="thesis-entry-writeup">${p.desc}</p>`}
             <ul class="project-tech-list">
               ${p.tags.map(t => `<li>${t}</li>`).join('')}
             </ul>

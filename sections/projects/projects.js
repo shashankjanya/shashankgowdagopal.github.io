@@ -190,14 +190,13 @@ export default {
           </div>
 
           <!-- Right: video or image slideshow -->
+          ${(p.video || (p.images && p.images.length)) ? `
           <div class="thesis-entry-visual">
             ${p.video
-          ? buildVideoPlayer(p.id, p.video)
-          : (p.images && p.images.length)
-            ? buildCarousel(p.id, p.images)
-            : `<div class="compact-carousel" style="display:flex;align-items:center;justify-content:center;background:var(--bg-card-hover);color:var(--text-secondary);font-size:0.85rem;font-family:monospace;border:1px solid var(--glass-border);border-radius:6px;aspect-ratio:4/3;">No media yet</div>`
-        }
-          </div>
+              ? buildVideoPlayer(p.id, p.video)
+              : buildCarousel(p.id, p.images)
+            }
+          </div>` : ''}
 
         </div>
         ${!isLast ? '<hr class="thesis-divider">' : ''}`;

@@ -667,10 +667,14 @@ body {
 }
 
 /* Email card — make the address text read as a hyperlink */
+a.social-link-card {
+    cursor: pointer;
+}
+
 a.social-link-card span {
     color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 1px;
 }
 
 .contact-icon {
@@ -686,6 +690,20 @@ a.social-link-card span {
     color: var(--text-secondary);
     font-size: 0.85rem;
     font-family: monospace;
+}
+
+.footer-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-link:hover {
+    border-bottom-color: var(--accent);
+    opacity: 0.85;
 }
 
 /* Carousel Implementation */

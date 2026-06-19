@@ -16,7 +16,7 @@ export default {
               </svg>
             </div>
             <h3>Teaching</h3>
-            <p>I like to reduce every topic to its most fundamental aspects. I want to explain things in a way where no one has to rely on pure memorization; the concept should just make sense. I have actively applied this by leading multiple teaching sessions for my classmates and junior students, specifically focusing on UAV conceptual design and flight dynamics.</p>
+            <p>I like to reduce every topic to its most fundamental aspects. I want to explain things in a way where no one has to rely on pure memorization; the concept should just make sense. I have actively applied this by leading multiple teaching sessions for my classmates and junior students, specifically focusing on aircraft conceptual design and flight dynamics.</p>
           </div>
 
           <div class="interest-card">

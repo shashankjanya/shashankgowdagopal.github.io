@@ -29,20 +29,18 @@ export default {
              <div class="skill-col">
                 <h4>Tools & Systems</h4>
                 <ul class="skill-list-inside">
-                  <li>Simulink</li>
-                  <li>PX4 Autopilot Stack</li>
                   <li>Git / GitHub Version Control</li>
+                  <li>Simulink</li>
                   <li>SolidWorks</li>
                 </ul>
               </div>
               <div class="skill-col">
                 <h4>Engineering Domains</h4>
                 <ul class="skill-list-inside">
-                  <li>Flight Dynamics Modeling</li>
-                  <li>Flight Controller Tuning</li>
+                  <li>Aircraft Conceptual Design</li>
+                  <li>Aircraft-Level Performance Analysis</li>
                   <li>Piloting Fixed Wing & Rotary Wing UAVs</li>
                   <li>UAV Flight Log Analysis</li>
-                  <li>UAV Sizing & Performance</li>
                 </ul>
               </div>
             </div>

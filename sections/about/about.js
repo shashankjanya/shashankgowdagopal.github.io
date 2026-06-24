@@ -38,6 +38,7 @@ export default {
               <div class="skill-col">
                 <h4>Engineering Domains</h4>
                 <ul class="skill-list-inside">
+                  <li>Aircraft System Identification</li>
                   <li>Flight Dynamics Modeling</li>
                   <li>Flight Controller Tuning</li>
                   <li>Piloting Fixed Wing & Rotary Wing UAVs</li>
